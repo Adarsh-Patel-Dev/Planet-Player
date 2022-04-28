@@ -4,7 +4,7 @@ import React from 'react';
 import { AsideBar } from "./components/Asidebar/Asidebar";
 import { Hero } from "./components/HeroSection/Hero";
 import {LandingPage} from "./pages/LandingPage/LandingPage";
-import { Navigation } from "./components/Navigation/Navigation";
+import { Footer } from "./components/Footer/Footer";
 import { CardHorizontal } from "./components/Card/CardHorizontal";
 
 
@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <LandingPage/>
       {/* <MockAPI/> */}
-      
+      <Footer/>
     </div>
   );
 }
