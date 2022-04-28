@@ -1,0 +1,103 @@
+.hero-section{
+
+    background-image: linear-gradient(to right, #000000, #020102, #030304, #040406, #040608, #040709, #040809, #040909, #040909, #040909, #040909, #040909);
+
+    /* background-image: linear-gradient(to right, #000000, #0b0404, #130903, #150f03, #141505, #1e2612, #24381c, #264b29, #3f7338, #5e9d45, #84c94f, #b1f556); */
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    background-color: rgb(242,242,244); 
+}
+
+.hero-text {
+    width: 60%;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 5rem;
+    line-height: 6rem;
+    color: var(--WHITE);
+}
+
+.hero-section-para {
+    width: 780px;
+    height: 65px;
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    color: var(--LIGHT-GREEN);
+}
+
+.img-hero{
+    z-index: -1;
+    max-width: 50%;
+    padding: 1rem;
+    margin-left: -15rem;
+    margin-top: 3rem;
+}
+
+img{
+
+    width: 100%;
+    height: 100%;
+}
+
+/*cta-button*/
+
+.cta-btns{
+    display: flex;
+   gap: 2rem;
+    align-items: center;
+    /* background-color: rgb(242,242,244); */
+    padding: 5rem 1rem;
+}
+
+.primary-cta {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    padding: 1.5rem 5rem;;
+    font-weight: lighter;
+    font-size: 1.8rem;
+    font-family: inherit;
+    border: none;
+    background-color: var(--LIGHT-GREEN);
+    color: var(--WHITE);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: 0.5s;
+    box-shadow: 0px 0px 10px #868585;
+}
+
+.primary-cta:hover {
+    background-color: #15151500;
+    color: var(--LIGHT-GREEN);
+    transition: 0.5s;
+    box-shadow: 0px 0px 10px #868585;;
+}
+
+.secondary-cta{
+    margin:  0 0.1rem;
+    padding: 1.5rem 5rem;
+    font-weight: lighter;
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: var(--LIGHT-GREEN);
+    background-color: var(--WHITE);
+    border: transparent;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    transition: 0.5s;
+    box-shadow: 0px 0px 10px #868585;
+}
+
+.secondary-cta:hover {
+    color: var(--WHITE);
+    background-color: var(--LIGHT-GREEN);
+    box-shadow: 0px 0px 10px #868585;
+    transition: 0.5s;
+}
