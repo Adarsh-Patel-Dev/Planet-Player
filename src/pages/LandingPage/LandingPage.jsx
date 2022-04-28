@@ -1,10 +1,13 @@
 
 import React from 'react'
 import './landingpage.css'
-import { AsideBar } from '../../components/Asidebar/Asidebar';
-import { Hero } from '../../components/HeroSection/Hero';
-import { Navigation } from '../../components/Navigation/Navigation';
-import { CardHorizontal } from '../../components/Card/CardHorizontal';
+import { 
+  AsideBar,
+  Hero,
+  Navigation,
+  CardHorizontal
+  } from '../../components/';
+
 
 
 function LandingPage() {
@@ -23,8 +26,8 @@ function LandingPage() {
        {/* </NavLink>  */}
     </div>
 
-    <section class="cards">
-        <div class="card--container">
+    <section className="cards">
+        <div className="card--container">
             <CardHorizontal/>
             <CardHorizontal/>
             <CardHorizontal/>
