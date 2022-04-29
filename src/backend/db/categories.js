@@ -4,9 +4,6 @@ import { v4 as uuid } from "uuid";
  * Category Database can be added here.
  * You can add category of your wish with different attributes
  * */
-/*
-   <iframe width="697" height="392" src="https://www.youtube.com/embed/PKZABq7Llzs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-*/
 
 export const categories = [
   {

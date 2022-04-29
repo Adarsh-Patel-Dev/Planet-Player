@@ -9,7 +9,7 @@ function CardHorizontal() {
     <div className="card">
            
             <div className="card--image">
-                <img src='https://i.ytimg.com/vi/Ir7dFd9Oflw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTaMoMZZfxlblwsVcy_XpOxnV17Q' className="img-fluid" alt="Plant-Image" width="400px" height="20px"/>
+                <img src='https://i.ytimg.com/vi/Ir7dFd9Oflw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBTaMoMZZfxlblwsVcy_XpOxnV17Q' className="img-fluid" alt="Plant-Image" />
 
                 <ul className='card--options'>
                     <li><MdOutlineWatchLater/></li>
