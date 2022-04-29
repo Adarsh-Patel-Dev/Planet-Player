@@ -1,0 +1,45 @@
+
+.body-section{
+    display: grid;
+    grid-template-columns: 10rem 1fr;
+}
+  
+.category-header{
+    background-color: rgb(242,242,244);
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.category-subheading{
+    font-family: inherit;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 5rem;
+    color: var(--GRAY-80);
+    width: auto;
+}
+
+.btn {
+    padding: 1rem ;
+    font-family: 'Montserrat', sans-serif; 
+    border: transparent;
+    color: var(--WHITE);
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #868585;
+}
+
+.btn--primary {
+    background-color: var(--GREEN);
+    transition: 0.5s;
+}
+
+.btn--primary:hover {
+    background-color:green;
+    color:  var(--WHITE);
+    transition: 0.5s;
+}
