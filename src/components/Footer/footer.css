@@ -1,0 +1,55 @@
+.footer{
+    position: relative;
+    background-color: var(--BLACK-60);
+    color: white
+}
+
+.footer div{
+    display: flex;
+    flex-direction: column;
+}
+
+.footer p {
+    font-size: 1.5rem;
+    padding: 1.5rem;
+}
+
+.footer span {
+    font-size: 1rem;
+    padding: 1.3rem;
+}
+
+.social-media-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem;
+
+}
+
+.social-media-icons li{
+    padding: 1rem;
+    background-color: transparent;
+    transition: 1s;
+    border-radius: 50%;
+    height: 3.5rem;
+    width: 3.5rem;    
+}
+
+.social-media-icons li:hover{
+    background-color:green;
+    transition: 1s;
+}
+
+
+.btn--float{
+    background-color: transparent;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.icon-up{
+    font-size: 2rem;
+}
