@@ -23,7 +23,7 @@ function CardHorizontal() {
             <div className="card--body">
                 <div className="card--details">
                     <div className='channel-logo'>
-                        <img className='logo-img' src='https://yt3.ggpht.com/ytc/AKedOLRKuH4PmoGusmEx6k2R6HJZaMggIA_cMt3lvO6t_Q=s68-c-k-c0x00ffffff-no-rj'/>
+                        <img className='logo-img' src='https://yt3.ggpht.com/ytc/AKedOLRKuH4PmoGusmEx6k2R6HJZaMggIA_cMt3lvO6t_Q=s68-c-k-c0x00ffffff-no-rj' alt='thumbnail'/>
                     </div>
                     <h4 className="card--title">Title of the video is here </h4>
  
