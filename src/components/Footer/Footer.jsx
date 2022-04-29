@@ -19,7 +19,7 @@ function Footer() {
           </ul>
             <span>Made with <FaHeart/> by Adarsh </span>
          </div>
-         <a href='#' class="btn btn--primary btn--float">
+         <a href='#' className="btn btn--primary btn--float">
           <MdKeyboardArrowUp className='icon-up'/>       
          </a>
       </footer>
