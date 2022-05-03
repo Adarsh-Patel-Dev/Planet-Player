@@ -13,7 +13,6 @@ import {
 function LandingPage() {
   return (
     <div>
-    <Navigation/>
     <div className='body-section'>
      <AsideBar/>
      <Hero/>
@@ -28,10 +27,10 @@ function LandingPage() {
 
     <section className="cards">
         <div className="card--container">
+            {/* <CardHorizontal/>
             <CardHorizontal/>
             <CardHorizontal/>
-            <CardHorizontal/>
-            <CardHorizontal/>
+            <CardHorizontal/> */}
         </div>
     </section>
     </div>
