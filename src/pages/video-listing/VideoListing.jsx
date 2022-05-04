@@ -5,7 +5,6 @@ import { AsideBar, CardHorizontal } from "../../components/";
 
 function VideoListing() {
   const { videoList } = useVideoListing();
-  console.log(videoList, "this is from videolisting");
 
   return (
     <div>
