@@ -1,41 +1,33 @@
-
-import React from 'react'
-import './landingpage.css'
-import { 
-  AsideBar,
-  Hero,
-  Navigation,
-  CardHorizontal
-  } from '../../components/';
-
-
+import React from "react";
+import "./landingpage.css";
+import { AsideBar, Hero } from "../../components/";
 
 function LandingPage() {
+  localStorage.setItem(
+    "token",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiJlMzIzZmY2MC1hMTUzLTQ0MTYtYmEyNS0zNDQ0ZGI1NjliOWMiLCJlbWFpbCI6ImFkYXJzaGJhbGlrYUBnbWFpbC5jb20ifQ._-fah2UEuueLmRHHl5uV4CYhiQdODX6neUkGbfTvtFM"
+  );
   return (
     <div>
-    <Navigation/>
-    <div className='body-section'>
-     <AsideBar/>
-     <Hero/>
-     </div>
+      <div className="body-section">
+        <AsideBar />
+        <Hero />
+      </div>
 
-    <div className="category-header">
+      <div className="category-header">
         <h3 className="category-subheading">Trending Videos</h3>
-       {/* <NavLink to='/videos' > */}
-       <button className="btn btn--primary">View All</button>
-       {/* </NavLink>  */}
-    </div>
+        {/* <NavLink to='/videos' > */}
+        <button className="btn btn--primary">View All</button>
+        {/* </NavLink>  */}
+      </div>
 
-    <section className="cards">
+      <section className="cards">
         <div className="card--container">
-            <CardHorizontal/>
-            <CardHorizontal/>
-            <CardHorizontal/>
-            <CardHorizontal/>
+          
         </div>
-    </section>
+      </section>
     </div>
-  )
+  );
 }
 
-export { LandingPage}
+export { LandingPage };
