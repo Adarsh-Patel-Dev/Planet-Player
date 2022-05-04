@@ -22,31 +22,34 @@ const VideoListingProvider = ({ children }) => {
   useEffect(() => {
     getVideoData();
   }, []);
-  
 
   async function getAllCategory() {
-    try{
-        const response = await axios({
-          method: "GET",
-          url: "/api/categories",
-        });
-    
-        if (response.status === 200) {
-          setCategory(response.data.categories);
-        }
-    } catch (error) {
-        console.error(error);
+    try {
+      const response = await axios({
+        method: "GET",
+        url: "/api/categories",
+      });
+
+      if (response.status === 200) {
+        setCategory(response.data.categories);
       }
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   async function getCategory(categoryId) {
-    const response = await axios({
-      method: "GET",
-      url: `/api/categories/${categoryId}`,
-    });
+    try {
+      const response = await axios({
+        method: "GET",
+        url: `/api/categories/${categoryId}`,
+      });
 
-    if (response.status === 200) {
-      setCategory(response.data.category);
+      if (response.status === 200) {
+        setCategory(response.data.category);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 

@@ -8,80 +8,104 @@ const PlaylistProvider = ({ children }) => {
   const [playlist, setPlaylist] = useState([]);
 
   async function getPlaylists() {
-    const response = await axios({
-      method: "GET",
-      url: "/api/user/playlists",
-      headers: { authorization: localStorage.getItem("token") },
-    });
+    try {
+      const response = await axios({
+        method: "GET",
+        url: "/api/user/playlists",
+        headers: { authorization: localStorage.getItem("token") },
+      });
 
-    if (response.status === 200) {
-      setPlaylist(response.data.playlists);
-      console.log("all playlists", playlist);
+      if (response.status === 200) {
+        setPlaylist(response.data.playlists);
+        console.log("all playlists", playlist);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function addPlaylists(playlistName, description, setPlaylist) {
-    const response = await axios({
-      method: "POST",
-      url: "/api/user/playlists",
-      headers: { authorization: localStorage.getItem("token") },
-      playlist: { title: `${playlistName}`, description: `${description}` },
-    });
+    try {
+      const response = await axios({
+        method: "POST",
+        url: "/api/user/playlists",
+        headers: { authorization: localStorage.getItem("token") },
+        playlist: { title: `${playlistName}`, description: `${description}` },
+      });
 
-    if (response.status === 201) {
-      setPlaylist(response.data.playlists);
-      console.log("added new playlists", playlist);
+      if (response.status === 201) {
+        setPlaylist(response.data.playlists);
+        console.log("added new playlists", playlist);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function removePlaylist(playlistId, setPlaylist) {
-    const response = axios({
-      method: "DELETE",
-      url: `/api/user/playlists/${playlistId}`,
-      headers: { authorization: localStorage.getItem("token") },
-    });
-    if (response.status === 200) {
-      setPlaylist(response.data.playlists);
-      console.log("remove one playlists", playlist);
+    try {
+      const response = axios({
+        method: "DELETE",
+        url: `/api/user/playlists/${playlistId}`,
+        headers: { authorization: localStorage.getItem("token") },
+      });
+      if (response.status === 200) {
+        setPlaylist(response.data.playlists);
+        console.log("remove one playlists", playlist);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function getPlaylist(playlistId, setPlaylist) {
-    const response = await axios({
-      method: "GET",
-      url: `/api/user/${playlistId}`,
-      headers: { authorization: localStorage.getItem("token") },
-    });
+    try {
+      const response = await axios({
+        method: "GET",
+        url: `/api/user/${playlistId}`,
+        headers: { authorization: localStorage.getItem("token") },
+      });
 
-    if (response.status === 200) {
-      setPlaylist(response.data.playlist);
-      console.log("particular playlist", playlist);
+      if (response.status === 200) {
+        setPlaylist(response.data.playlist);
+        console.log("particular playlist", playlist);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function addToPlaylist(playlistId, videoId, setPlaylist) {
-    const response = await axios({
-      method: "POST",
-      url: `/api/user/${playlistId}`,
-      headers: { authorization: localStorage.getItem("token") },
-      video: `${videoId}`,
-    });
+    try {
+      const response = await axios({
+        method: "POST",
+        url: `/api/user/${playlistId}`,
+        headers: { authorization: localStorage.getItem("token") },
+        video: `${videoId}`,
+      });
 
-    if (response.status === 201) {
-      setPlaylist(response.data.playlists);
-      console.log("added video to playlists", playlist);
+      if (response.status === 201) {
+        setPlaylist(response.data.playlists);
+        console.log("added video to playlists", playlist);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function removeFromPlaylist(playlistId, videoId, setPlaylist) {
-    const response = axios({
-      method: "DELETE",
-      url: `/api/user/playlists/${playlistId}/${videoId}`,
-      headers: { authorization: localStorage.getItem("token") },
-    });
-    if (response.status === 200) {
-      setPlaylist(response.data.playlist);
-      console.log("removed video from playlists", playlist);
+    try {
+      const response = axios({
+        method: "DELETE",
+        url: `/api/user/playlists/${playlistId}/${videoId}`,
+        headers: { authorization: localStorage.getItem("token") },
+      });
+      if (response.status === 200) {
+        setPlaylist(response.data.playlist);
+        console.log("removed video from playlists", playlist);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 

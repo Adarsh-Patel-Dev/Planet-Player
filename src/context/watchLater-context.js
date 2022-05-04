@@ -9,36 +9,48 @@ const WatchLaterProvider = ({ children }) => {
   const [watchLater, setWatchLater] = useState([]);
 
   async function getWatchLater() {
-    const response = await axios({
-      method: "GET",
-      url: "/api/user/watchlater",
-      headers: { authorization: localStorage.getItem("token") },
-    });
-    if (response.status === 200) {
-      setWatchLater(response.data.watchlater);
+    try {
+      const response = await axios({
+        method: "GET",
+        url: "/api/user/watchlater",
+        headers: { authorization: localStorage.getItem("token") },
+      });
+      if (response.status === 200) {
+        setWatchLater(response.data.watchlater);
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
   async function addToWatchLater(video, setWatchLater) {
-    const response = await axios({
-      method: "POST",
-      url: "/api/user/watchlater",
-      headers: { authorization: localStorage.getItem("token") },
-      data: { video: video },
-    });
-    if (response.status === 201) {
-      setWatchLater(response.data.watchlater);
+    try {
+      const response = await axios({
+        method: "POST",
+        url: "/api/user/watchlater",
+        headers: { authorization: localStorage.getItem("token") },
+        data: { video: video },
+      });
+      if (response.status === 201) {
+        setWatchLater(response.data.watchlater);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function removeFromWatchLater(videoId, setWatchLater) {
-    const response = await axios({
-      method: "DELETE",
-      url: `/api/user/watchlater/${videoId}`,
-      headers: { authorization: localStorage.getItem("token") },
-    });
-    if (response.status === 200) {
-      setWatchLater(response.data.watchlater);
+    try {
+      const response = await axios({
+        method: "DELETE",
+        url: `/api/user/watchlater/${videoId}`,
+        headers: { authorization: localStorage.getItem("token") },
+      });
+      if (response.status === 200) {
+        setWatchLater(response.data.watchlater);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 

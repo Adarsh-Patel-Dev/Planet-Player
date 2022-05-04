@@ -8,56 +8,72 @@ const HistoryProvider = ({ children }) => {
   const [history, setHistory] = useState([]);
 
   async function getHistory() {
-    const response = await axios({
-      method: "GET",
-      url: "/api/user/history",
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-    });
-    if (response.status === 200) {
-      setHistory(response.data.history);
-      console.log("all history", history);
+    try {
+      const response = await axios({
+        method: "GET",
+        url: "/api/user/history",
+        headers: {
+          authorization: localStorage.getItem("token"),
+        },
+      });
+      if (response.status === 200) {
+        setHistory(response.data.history);
+        console.log("all history", history);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function addToHistory(video, setHistory) {
-    const response = await axios({
-      method: "POST",
-      url: "/api/user/history",
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-      data: { video: video },
-    });
-    if (response.status === 201) {
-      setHistory(response.data.history);
+    try {
+      const response = await axios({
+        method: "POST",
+        url: "/api/user/history",
+        headers: {
+          authorization: localStorage.getItem("token"),
+        },
+        data: { video: video },
+      });
+      if (response.status === 201) {
+        setHistory(response.data.history);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function removeFromHistory(videoId) {
-    const response = await axios({
-      method: "DELETE",
-      url: `/api/user/history/${videoId}`,
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-    });
-    if (response.status === 200) {
-      setHistory(response.data.history);
+    try {
+      const response = await axios({
+        method: "DELETE",
+        url: `/api/user/history/${videoId}`,
+        headers: {
+          authorization: localStorage.getItem("token"),
+        },
+      });
+      if (response.status === 200) {
+        setHistory(response.data.history);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
   async function clearHistory() {
-    const response = await axios({
-      method: "DELETE",
-      url: `/api/user/history/all`,
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-    });
-    if (response.status === 200) {
-      setHistory(response.data.history);
+    try {
+      const response = await axios({
+        method: "DELETE",
+        url: `/api/user/history/all`,
+        headers: {
+          authorization: localStorage.getItem("token"),
+        },
+      });
+      if (response.status === 200) {
+        setHistory(response.data.history);
+      }
+    } catch (error) {
+      console.error(error);
     }
   }
 
