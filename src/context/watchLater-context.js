@@ -54,6 +54,10 @@ const WatchLaterProvider = ({ children }) => {
     }
   }
 
+  function clearWatchlater(){
+    setWatchLater([])
+  }
+
   return (
     <WatchLaterContext.Provider
       value={{
@@ -61,6 +65,7 @@ const WatchLaterProvider = ({ children }) => {
         watchLater,
         addToWatchLater,
         removeFromWatchLater,
+        clearWatchlater,
       }}
     >
       {children}

@@ -46,3 +46,42 @@
   font-size: 1.2rem;
   margin: 1rem;
 }
+/***main-section-of-all-pages***/
+
+.body-section {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+}
+
+.main-section-heading {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  color: gray;
+  align-items: center;
+  grid-gap: 8px;
+  grid-gap: 8px;
+  gap: 8px;
+}
+
+.main-section-heading-center{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.main-section-heading button{
+  color: gray;
+}
+
+.remove-btn{
+  font-size: 2rem;
+}
+
+.small{
+  font-size: 1.5rem;
+  font-weight: 400;
+}

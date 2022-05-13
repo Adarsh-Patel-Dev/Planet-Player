@@ -1,47 +1,44 @@
-
 .aside-container {
-
-    width: auto;
-    max-width: 10rem;
-    overflow-y: auto;
-    overflow-x: clip;
-    height: calc(100vh - 6.24rem);
-    display: flex;
-    flex-direction: column;
-    margin-top: 0px;
-    color: white;
-    background: linear-gradient(184.47deg, #151515 -1.58%, #010101 120.78%);
+  width: auto;
+  max-width: 10rem;
+  overflow-y: auto;
+  overflow-x: clip;
+  height: calc(100vh - 6.24rem);
+  display: flex;
+  flex-direction: column;
+  margin-top: 0px;
+  color: white;
+  background: linear-gradient(184.47deg, #151515 -1.58%, #010101 120.78%);
 }
 
-.aside-list{
-    margin: 2rem ; 
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-    flex-direction: column;
+.aside-list {
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  flex-direction: column;
 }
 
-
-
-.aside-item{
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0rem;
-    font-weight: 500;   
+.aside-item {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0rem;
+  font-weight: 500;
 }
 
-.aside-text{
-    color: white;
-    font-size: 1rem;
+.aside-text {
+  color: white;
+  font-size: 1rem;
 }
 
-.aside-link{
-    font-size: 2.5rem;
-    color: white;
+.aside-link {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  font-size: 2.5rem;
+  color: white;
+  gap: 1rem;
 }
-
-
-

@@ -55,6 +55,10 @@ const LikedVideoProvider = ({ children }) => {
     }
   }
 
+   function clearLikedVideos() {
+    setLikeVideo([])
+  }
+
   return (
     <LikedVideoContext.Provider
       value={{
@@ -63,6 +67,7 @@ const LikedVideoProvider = ({ children }) => {
         getLikeVideo,
         addToLikeVideo,
         removeFromLikeVideo,
+        clearLikedVideos,
       }}
     >
       {children}
