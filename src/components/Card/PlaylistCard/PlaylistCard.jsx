@@ -8,7 +8,7 @@ import { MdOutlineWatchLater, MdPlaylistPlay } from "react-icons/md";
 // import { usePlaylistContext } from "../../context/playlist-context";
 // import { useWatchLaterContext } from "../../context/watchLater-context";
 
-function PlaylistCard() {
+function PlaylistCard({playlist}) {
 //   const {
 //     _id,
 //     title,
@@ -34,7 +34,6 @@ function PlaylistCard() {
       <div className="card--image">
         <img
         //   onClick={() => {
-        //     addToHistory(video, setHistory);
         //     navigate(`/singlevideopage/${_id}`);
         //   }}
         //   src={thumbnailUrl}

@@ -16,8 +16,15 @@ function PlaylistPage() {
         <AsideBar />
         <section className="cards">
           <h3 className="main-section-heading">
+          <div className="main-section-heading-center">
             <AiOutlineHistory />
              Playlist {playlist.length}
+             </div>
+             <div>
+             <button 
+              onClick={()=>{}}
+              className="btn btn-primary">Clear All</button>
+             </div>
           </h3>
           <div className="card--container">
             {playlist?.map((video) => (
