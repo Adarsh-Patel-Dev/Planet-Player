@@ -11,7 +11,7 @@ import { useLikeVideoContext } from "../../../context/liked-video-context";
 // import { useWatchLaterContext } from "../../context/watchLater-context";
 // import { useLikeVideoContext } from '../../../context/liked-video-context';
 
-function SmallCard({video},removeFunction) {
+function SmallCard({video, removeFunction}) {
     const {
         _id,
         title,
@@ -77,7 +77,7 @@ function SmallCard({video},removeFunction) {
       <div className="card--footer-small">
         <div className="card-channel-small">{creator}</div>
         <div className="card-views-small">
-          {views} 
+          {} 
         </div>
       </div>
     </div>

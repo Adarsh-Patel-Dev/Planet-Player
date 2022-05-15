@@ -3,8 +3,7 @@ import { MdClose } from "react-icons/md";
 import { usePlaylistContext } from "../../context/playlist-context";
 import "./playlistmodal.css";
 
-
-function PlaylistModal({video}) {
+function PlaylistModal({ video }) {
   const [playlistName, setplaylistName] = useState("");
 
   const {
@@ -21,58 +20,68 @@ function PlaylistModal({video}) {
     addToPlaylist,
   } = usePlaylistContext();
   return (
-    <div>
-    
-      <div 
-      style={{ display: display }} 
-      class="modal--container">
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <MdClose onClick={toggleModal} class="close"></MdClose>
+    <div style={{ display: display }} className="modal--container">
+      <div id="myModal" className="modal">
+        <div className="modal-content">
+          <MdClose onClick={toggleModal} className="close"></MdClose>
 
-            <div className="modal-body">
-              <h3>Add to Playlist</h3>
-              <div class="divider"></div>
+          <div className="modal-body">
+            <p className="modal-title">Add to Playlist</p>
+            <div className="divider"></div>
 
-              {  playlist?.map((playlist) => {
-                return (
-                  <div className="checkbox-input">
-                    <input
-                      type="checkbox"
-                      onChange={(e) => e.target.checked ?  addToPlaylist(video,playlist._id,setPlaylist): removeFromPlaylist(playlist._id,video._id,setPlaylist) 
-                       
-                       }
-                      name="check"
-                      className="checkbox"
-                    />
+            {playlist?.map((playlist) => {
+              return (
+                <div className="checkbox-input" key={playlist._id}>
+                  <input
+                    type="checkbox"
+                    onChange={(e) =>
+                      e.target.checked
+                        ? addToPlaylist(
+                            video,
+                            playlist._id,
+                            setPlaylist,
+                            toggleModal
+                          )
+                        : removeFromPlaylist(
+                            playlist._id,
+                            video._id,
+                            setPlaylist
+                          )
+                    }
+                    name="check"
+                    className="checkbox"
+                  />
+                  <div className="playlist-name">
                     {playlist.title.playlistName}
                   </div>
-                );
-              })}
+                </div>
+              );
+            })}
 
-              <div class="divider"></div>
-              <h3> + Create new playlist</h3>
-              <div class="divider"></div>
-              <label htmlFor="playlistname">PLAYLIST NAME</label>
-              <input
-                name="playlistname"
-                onChange={(e) => setplaylistName(e.target.value)}
-                value={playlistName}
-                className="input"
-                placeholder="enter playlist name..."
-              ></input>
+            <div className="divider"></div>
+            <p className="modal-title"> + Create new playlist</p>
+            <label htmlFor="playlistname" className="label">
+              PLAYLIST NAME
+            </label>
+            <input
+              name="playlistname"
+              onChange={(e) => setplaylistName(e.target.value)}
+              value={playlistName}
+              className="input"
+              placeholder="enter playlist name..."
+            ></input>
 
-              <div class="modal--btn">
-                <button
-                  onClick={() => {
-                    addPlaylists(playlistName, setPlaylist);
-                   
-                  }}
-                  class="btn btn--primary "
-                >
-                  Create
-                </button>
-              </div>
+            <div className="modal--btn">
+              <button
+                onClick={() => {
+                  playlistName.length > 0
+                    ? addPlaylists(playlistName, setPlaylist)
+                    : "";
+                }}
+                className="btn-modal"
+              >
+                Create
+              </button>
             </div>
           </div>
         </div>

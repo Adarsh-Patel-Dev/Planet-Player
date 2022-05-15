@@ -1,5 +1,7 @@
 import React from "react";
 import "../card.css";
+import "./playlistcard.css"
+
 import { useNavigate } from "react-router-dom";
 import { BiLike } from "react-icons/bi";
 import { MdOutlineWatchLater, MdPlaylistPlay } from "react-icons/md";
@@ -9,19 +11,19 @@ import { MdOutlineWatchLater, MdPlaylistPlay } from "react-icons/md";
 // import { useWatchLaterContext } from "../../context/watchLater-context";
 
 function PlaylistCard({playlist}) {
-//   const {
-//     _id,
-//     title,
-//     creator,
-//     creater_img,
-//     thumbnailUrl,
-//     videos,
-//     description,
-//     video_id,
-//     old,
-//     duration,
-//     views,
-//   } = video;
+
+
+  const {
+  title: { playlistName },
+  _id,
+  videos,
+} = playlist;
+
+const img = (videos.length>0) ? videos[0].thumbnailUrl :"https://www.luxuryandexpensive.com/pic/50010_1.jpg"
+
+console.log("from playlistpAGE",playlist)
+console.log("from playlistpAGE",videos)
+console.log("from playlistpAGE",videos.length)
 
   const navigate = useNavigate();
 
@@ -32,32 +34,24 @@ function PlaylistCard({playlist}) {
   return (
     <div className="card" >
       <div className="card--image">
+     <div className="card-overlay">
+      <p>{videos.length}</p>
+      <MdPlaylistPlay/>
+     </div>
         <img
-        //   onClick={() => {
-        //     navigate(`/singlevideopage/${_id}`);
-        //   }}
-        //   src={thumbnailUrl}
-            src="https://images.moneycontrol.com/static-mcnews/2022/05/3-toyota-all-electric-bZ4X-sport-utility-vehicles.jpg"
+          onClick={() => {
+            navigate(`/singleplaylistpage/${_id}`);
+          }}
+            src={img}
           className="img-fluid"
-          alt="Plant-Image"
+          // alt={playlistName}
         />
 
-        {/* <ul className="card--options">
-          <li onClick={() => addToWatchLater(video, setWatchLater)}>
-            <MdOutlineWatchLater />
-          </li>
-          <li onClick={addToPlaylist}>
-            <MdPlaylistPlay />
-          </li>
-          <li onClick={() => addToLikeVideo(video, setLikeVideo)}>
-            <BiLike />
-          </li>
-        </ul> */}
       </div>
 
       <div className="card--body">
         <div className="card--details">
-          <h4 className="card--title">playlist name</h4>
+          <h4 className="card--title">{playlistName}</h4>
         </div>
       </div>
     </div>

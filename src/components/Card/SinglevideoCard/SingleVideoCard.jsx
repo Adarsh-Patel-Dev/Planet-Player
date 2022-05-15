@@ -15,13 +15,15 @@ import { AsideBar } from "../../Asidebar/Asidebar";
 
 import "../card.css";
 import "./singlevideo.css";
+import { useWatchLaterContext } from "../../../context/watchLater-context.js";
 
 function SingleVideoCard() {
   const { videoId } = useParams();
 
   const { videoList } = useVideoListing();
   const { toggleModal } = usePlaylistContext();
-  const { addToLikeVideo, setLikeVideo } = useLikeVideoContext();
+  const { addToLikeVideo, setLikeVideo, removeFromLikeVideo } = useLikeVideoContext();
+  const { addToWatchLater, setWatchLater } = useWatchLaterContext();
 
   const filteredVideo = videoList.filter((video) => video._id === videoId);
 
@@ -74,14 +76,18 @@ function SingleVideoCard() {
                   />
                 </span>
                 <span>
-                  <AiOutlineDislike />
+                  <AiOutlineDislike
+                   onClick = {()=>removeFromLikeVideo(_id,setLikeVideo)}
+                   />
                 </span>
                 <span>
                   <MdPlaylistAdd onClick={toggleModal} />
                 </span>
                 <PlaylistModal video={filteredVideo[0]} />
                 <span>
-                  <MdOutlineWatchLater />
+                  <MdOutlineWatchLater 
+                    onClick={()=>addToWatchLater(filteredVideo[0],setWatchLater)}
+                  />
                 </span>
               </div>
             </div>

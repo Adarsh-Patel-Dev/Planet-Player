@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../LandingPage/landingpage.css";
-import { AsideBar, CardHorizontal, SmallCard } from "../../components/";
+import { AsideBar, SmallCard } from "../../components/";
 import { useWatchLaterContext } from "../../context/watchLater-context";
-// import { SmallCard} from "../../components/Card/SmallCard/SmallCard"
 import { MdOutlineWatchLater } from "react-icons/md";
 
 function WatchLater() {
-  const { watchLater,clearWatchlater } = useWatchLaterContext();
+  const { watchLater,clearWatchlater, setWatchLater, removeFromWatchLater  } = useWatchLaterContext();
 
   return (
     <div>
@@ -26,7 +25,7 @@ function WatchLater() {
           </h3>
           <div className="card--container">
             {watchLater?.map((video) => (
-              <SmallCard key={video._id} video={video} />
+              <SmallCard key={video._id} video={video} removeFunction = {()=>removeFromWatchLater(video._id, setWatchLater)}/>
             ))}
           </div>
         </section>

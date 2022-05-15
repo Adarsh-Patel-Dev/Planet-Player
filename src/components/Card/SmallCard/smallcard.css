@@ -1,7 +1,7 @@
 
 
 .card-small {
-    width: 60%;
+    width: 90%;
     height: auto;
     background-color: var(--WHITE);
     color: var(--BLACK-80);
@@ -14,7 +14,13 @@
     margin: auto;
 }
 
+.card-small:hover{
+  box-shadow: 0px 0px 15px var(--BOX-SHADOW);
+  
+}
+
 .card--image-small {
+    cursor:pointer;
     position: relative;
     margin: 0;
     padding: 0;
@@ -44,8 +50,9 @@
     flex-direction: row;
     align-items: center;
     grid-gap: 1rem;
+    grid-gap: 1rem;
     gap: 1rem;
-    margin: 0.5rem;
+    margin-top: -3px;
     padding: 0;
 }
 

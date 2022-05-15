@@ -8,6 +8,7 @@ const PlaylistProvider = ({ children }) => {
   const [playlist, setPlaylist] = useState([]);
 
   const [display, setDisplay] = useState("none");
+  
   const toggleModal = () =>{
     setDisplay(display === 'none' ? 'block' : 'none' )
   }
@@ -88,7 +89,7 @@ const PlaylistProvider = ({ children }) => {
     }
   }
 
-  async function addToPlaylist(cardData, playlistId,  setPlaylist) {
+  async function addToPlaylist(cardData, playlistId,  setPlaylist, toggle) {
     try {
       const response = await axios({
         method: "POST",
@@ -104,8 +105,7 @@ const PlaylistProvider = ({ children }) => {
           } return playlist
         })
         setPlaylist(updatedPlayList);
-        // console.table("added video to playlists", playlist);
-        // console.table("updated playlist playlists", updatedPlayList);
+        toggle();
       }
     } catch (error) {
       console.error(error);
@@ -115,6 +115,7 @@ const PlaylistProvider = ({ children }) => {
 
   async function removeFromPlaylist(playlistId, videoId, setPlaylist) {
     try {
+      console.log('inside removeFromPlaylist')
       const response = await axios({
         method: "DELETE",
         url: `/api/user/playlists/${playlistId}/${videoId}`,
@@ -129,6 +130,8 @@ const PlaylistProvider = ({ children }) => {
       console.error(error);
     }
   }
+
+ 
   console.table("removed video from playlists", playlist);
 
   const value = {

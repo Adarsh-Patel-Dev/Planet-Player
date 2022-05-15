@@ -8,9 +8,9 @@ function Hero() {
   return (
     <section className="hero-section">
 
-        <div className="hero-text">Growing <span className="light-green">PLANTS </span>
-        <p className="hero-section-para">Today</p>
-        <p className="hero-section-para">will help you Tomorrow</p>
+        <div className="hero-text">All about the <span className="light-green">DRIVE </span>
+        <p className="hero-section-para">Get the </p>
+        <p className="hero-section-para">Feeling</p>
      <div className="cta-btns">
        {/* <NavLink to='/products'> */}
        <button className="primary-cta" >Watch Now <FaArrowRight style={{fontSize: "18px"}}/></button>
@@ -18,7 +18,7 @@ function Hero() {
     </div>
 </div>
 <div className="img-hero">
-    <img src='https://images.unsplash.com/photo-1538506392157-218c11f95129?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1055&q=80' alt='plant image'/>
+    <img src='https://img1.fonwall.ru/o/wz/lamborghini-huracan-lamborghini-2018-cars-cars-yaxj.jpeg?route=mid&h=750' alt='plant image'/>
 </div>
 </section>
   )

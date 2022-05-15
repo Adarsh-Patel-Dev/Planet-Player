@@ -1,4 +1,5 @@
 import "./App.css";
+import { ToastContainer, toast } from 'react-toastify';
 import MockAPI from "./mockman/MockAPI";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
@@ -11,6 +12,7 @@ import { LikedVideoPage } from "./pages/LikedVideoPage/LikedVideoPage";
 import { WatchLater } from "./pages/WatchlaterPage/WatchLater";
 import { HistoryPage } from "./pages/HistoryPage/HistoryPage";
 import { PlaylistPage } from "./pages/PlaylistPage/PlaylistPage";
+import { SinglePlaylistPage } from "./pages/SinglePlaylistPage/SinglePlaylistPage";
 
 function App() {
   return (
@@ -23,10 +25,12 @@ function App() {
         <Route path="/watchlater" element={<WatchLater />} />
         <Route path="/history" element={<HistoryPage />} />
         <Route path="/singlevideopage/:videoId" element={<SingleVideoCard />} />
+        <Route path="/singleplaylistpage/:playlistId" element={<SinglePlaylistPage />} />
         <Route path="/playlist" element={<PlaylistPage />} />
         <Route path="/mockman" element={<MockAPI />} />
       </Routes>
       <Footer />
+      <ToastContainer />
     </div>
   );
 }

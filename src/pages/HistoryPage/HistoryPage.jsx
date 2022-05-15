@@ -1,11 +1,11 @@
 import "../LandingPage/landingpage.css";
-import { AsideBar, CardHorizontal } from "../../components/";
+import { AsideBar, CardHorizontal, SmallCard } from "../../components/";
 import { useHistoryContext } from "../../context/history-context";
 // import { SmallCard} from "../../components/Card/SmallCard/SmallCard"
 import { AiOutlineHistory } from "react-icons/ai";
 
 function HistoryPage() {
-  const { history,clearHistory } = useHistoryContext();
+  const { history,clearHistory, removeFromHistory } = useHistoryContext();
 
   return (
     <div>
@@ -25,7 +25,7 @@ function HistoryPage() {
           </h3>
           <div className="card--container">
             {history?.map((video) => (
-              <CardHorizontal key={video._id} video={video} />
+              <SmallCard key={video._id} video={video} removeFunction={()=>removeFromHistory(video._id)}/>
             ))}
           </div>
         </section>

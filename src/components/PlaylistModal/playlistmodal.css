@@ -18,9 +18,10 @@
 }
 
 .modal {
-    background-color: antiquewhite;
+    border-radius: 5px;
+    background-color: var(--GRAY-80);
+    color: var(--WHITE);
     width: min-content;
-    border: 1px solid black;
     padding: 1rem;
     position: absolute;
     top: 50%;
@@ -29,21 +30,28 @@
 }
 
 .divider{
-    margin: 1rem auto;
+    margin: 5px auto;
     width:100%;
     background-color: gray;
     height: 1px;
 }
-.input{
-    border-radius: 1rem;
-    background-color: white;
-    border: 1px solid gray;
-    color: black;
-    padding: 1rem;
+
+.input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid greenyellow;
+    color: white;
+    padding: 0rem 2rem 0.5rem 0.2rem;
 }
 
 .modal-content{
+    padding: 0.5rem;
   position: relative;
+}
+
+.label {
+    margin-bottom: -8px;
+    padding-top: 0.5rem;
 }
 
 .close{
@@ -51,7 +59,7 @@
     position: absolute;
     top: 0px;
     right: 10px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -63,4 +71,36 @@
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+}
+
+.checkbox-input {
+    display: flex;
+    grid-gap: 1rem;
+    gap: 1rem;
+    align-items: flex-end;
+    justify-content: baseline;
+}
+
+.checkbox{
+ accent-color: greenyellow;
+ width: 1.5rem;
+ height: 1.5rem;
+}
+
+.playlist-name{
+ font-size: 1.2rem;
+}
+
+.btn-modal {
+    position: relative;
+    right: -15rem;
+    border: transparent;
+    background: transparent;
+    color: greenyellow;
+    padding: 0.5rem 0;
+}
+
+.modal-title{
+    color: rgb(152, 208, 253);
+    font-size: 1.5rem;
 }

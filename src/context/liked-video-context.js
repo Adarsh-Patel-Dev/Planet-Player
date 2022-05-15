@@ -47,7 +47,7 @@ const LikedVideoProvider = ({ children }) => {
         url: `/api/user/likes/${videoId}`,
         headers: { authorization: localStorage.getItem("token") },
       });
-      if (response.status === 201) {
+      if (response.status === 200) {
         setLikeVideo(response.data.likes);
       }
     } catch (error) {
