@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.css";
 import { useNavigate } from "react-router-dom";
-import { MdOutlineWatchLater, MdPlaylistPlay, BiLike } from "../../Assets/Icons";
+import { MdOutlineWatchLater, BiLike } from "../../Assets/Icons";
 import { useHistoryContext, useLikeVideoContext, usePlaylistContext, useWatchLaterContext } from "../../context/";
 
 function CardHorizontal({ video }) {
@@ -22,7 +22,6 @@ function CardHorizontal({ video }) {
 
   const { addToHistory, setHistory } = useHistoryContext();
   const { addToLikeVideo, setLikeVideo } = useLikeVideoContext();
-  const { addPlaylists, addToPlaylist } = usePlaylistContext();
   const { addToWatchLater, setWatchLater } = useWatchLaterContext();
   return (
     <div className="card" key={_id}>
@@ -40,9 +39,6 @@ function CardHorizontal({ video }) {
         <ul className="card--options">
           <li onClick={() => addToWatchLater(video, setWatchLater)}>
             <MdOutlineWatchLater />
-          </li>
-          <li onClick={addToPlaylist}>
-            <MdPlaylistPlay />
           </li>
           <li onClick={() => addToLikeVideo(video, setLikeVideo)}>
             <BiLike />
