@@ -1,5 +1,6 @@
 import React from "react";
 import "./landingpage.css";
+import { Link, NavLink } from "react-router-dom";
 import { AsideBar, Hero } from "../../components/";
 
 function LandingPage() {
@@ -20,7 +21,7 @@ function LandingPage() {
           <button onClick={() => {}} className="btn btn--primary">
             View All
           </button>
-          <ToastContainer />
+          
         {/* </NavLink> */}
       </div>
 
