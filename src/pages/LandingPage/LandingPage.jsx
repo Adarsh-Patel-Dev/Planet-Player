@@ -16,12 +16,12 @@ function LandingPage() {
 
       <div className="category-header">
         <h3 className="category-subheading">Trending Videos</h3>
-        <NavLink to="/videolisting">
+        {/* <NavLink to="/videolisting"> */}
           <button onClick={() => {}} className="btn btn--primary">
             View All
           </button>
           <ToastContainer />
-        </NavLink>
+        {/* </NavLink> */}
       </div>
 
       <section className="cards">
