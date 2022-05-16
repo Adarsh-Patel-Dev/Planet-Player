@@ -1,19 +1,13 @@
 import "../LandingPage/landingpage.css";
 import { useParams } from "react-router-dom";
-import { AsideBar, CardHorizontal } from "../../components/";
-// import { useHistoryContext } from "../../context/history-context";
-import { SmallCard} from "../../components/Card/SmallCard/SmallCard"
-import {
-    MdPlaylistPlay,
-  } from "react-icons/md";
-
-import { usePlaylistContext } from "../../context/playlist-context";
-
+import { AsideBar, SmallCard } from "../../components/";
+import { MdPlaylistPlay } from "react-icons/md";
+import { usePlaylistContext } from "../../context/";
 
 function SinglePlaylistPage() {
-
   const { playlistId } = useParams();
-  const { playlist, setPlaylist, removeFromPlaylist, removePlaylist } = usePlaylistContext();
+  const { playlist, setPlaylist, removeFromPlaylist, removePlaylist } =
+    usePlaylistContext();
 
   const filteredPlaylist = playlist.filter(
     (playlist) => playlist._id === playlistId
@@ -30,7 +24,7 @@ function SinglePlaylistPage() {
     _id,
     videos,
   } = filteredPlaylist[0];
-  console.log(playlistId,"playlistidddd")
+  console.log(playlistId, "playlistidddd");
 
   return (
     <div>
@@ -44,13 +38,16 @@ function SinglePlaylistPage() {
             </div>
             <div>
               {/* <button onClick={()=>removePlaylist(_id, setPlaylist )} className="btn btn-primary"> */}
-              
             </div>
           </h3>
           <div className="card--container">
             {videosInPlaylist?.map((video) => (
-              <SmallCard key={video._id} video={video}  removeFunction={()=>removeFromPlaylist(_id, video._id, setPlaylist)}
-             
+              <SmallCard
+                key={video._id}
+                video={video}
+                removeFunction={() =>
+                  removeFromPlaylist(_id, video._id, setPlaylist)
+                }
               />
             ))}
           </div>

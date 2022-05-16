@@ -1,28 +1,30 @@
 import React from "react";
+import "../card.css";
+import "./singlevideo.css";
+import { PlaylistModal } from "../../PlaylistModal/PlaylistModal";
+import { useParams } from "react-router-dom";
 import {
+  MdOutlineWatchLater,
+  MdPlaylistAdd,
   AiFillDislike,
   AiFillLike,
   AiOutlineDislike,
   AiOutlineLike,
-} from "react-icons/ai";
-import { MdOutlineWatchLater, MdPlaylistAdd } from "react-icons/md";
-import { useParams } from "react-router-dom";
-import { usePlaylistContext } from "../../../context/playlist-context.js";
-import { useVideoListing } from "../../../context/video-listing-context.js";
-import { PlaylistModal } from "../../PlaylistModal/PlaylistModal.jsx";
-import { useLikeVideoContext } from "../../../context/liked-video-context";
-import { AsideBar } from "../../Asidebar/Asidebar";
-
-import "../card.css";
-import "./singlevideo.css";
-import { useWatchLaterContext } from "../../../context/watchLater-context.js";
+} from "../../../Assets/Icons";
+import {
+  usePlaylistContext,
+  useVideoListing,
+  useLikeVideoContext,
+  useWatchLaterContext,
+} from "../../../context/";
 
 function SingleVideoCard() {
   const { videoId } = useParams();
 
   const { videoList } = useVideoListing();
   const { toggleModal } = usePlaylistContext();
-  const { addToLikeVideo, setLikeVideo, removeFromLikeVideo } = useLikeVideoContext();
+  const { addToLikeVideo, setLikeVideo, removeFromLikeVideo } =
+    useLikeVideoContext();
   const { addToWatchLater, setWatchLater } = useWatchLaterContext();
 
   const filteredVideo = videoList.filter((video) => video._id === videoId);
@@ -45,13 +47,13 @@ function SingleVideoCard() {
   return (
     <div>
       <div className="body-section">
-        <AsideBar />
+        {/* <AsideBar /> */}
         <div className="card--single-video">
           <div className="card--image--single-video">
             <iframe
               className="iframe"
-              width="1100"
-              height="620"
+              // width="1100"
+              // height="620"
               src={videourl}
               title="YouTube video player"
               frameBorder="0"
@@ -77,16 +79,18 @@ function SingleVideoCard() {
                 </span>
                 <span>
                   <AiOutlineDislike
-                   onClick = {()=>removeFromLikeVideo(_id,setLikeVideo)}
-                   />
+                    onClick={() => removeFromLikeVideo(_id, setLikeVideo)}
+                  />
                 </span>
                 <span>
                   <MdPlaylistAdd onClick={toggleModal} />
                 </span>
                 <PlaylistModal video={filteredVideo[0]} />
                 <span>
-                  <MdOutlineWatchLater 
-                    onClick={()=>addToWatchLater(filteredVideo[0],setWatchLater)}
+                  <MdOutlineWatchLater
+                    onClick={() =>
+                      addToWatchLater(filteredVideo[0], setWatchLater)
+                    }
                   />
                 </span>
               </div>

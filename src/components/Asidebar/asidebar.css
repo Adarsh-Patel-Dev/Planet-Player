@@ -1,9 +1,9 @@
 .aside-container {
-  width: auto;
-  max-width: 10rem;
-  overflow-y: auto;
+  width: 8%;
+  min-width: 8rem;
+  /* overflow-y: auto;
   overflow-x: clip;
-  height: calc(100vh - 6.24rem);
+  height: calc(100vh - 6.24rem); */
   display: flex;
   flex-direction: column;
   margin-top: 0px;

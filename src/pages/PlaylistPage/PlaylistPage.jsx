@@ -1,14 +1,9 @@
 import "../LandingPage/landingpage.css";
-import { AsideBar, CardHorizontal } from "../../components/";
-// import { useHistoryContext } from "../../context/history-context";
-import {
-  MdPlaylistPlay,
-} from "react-icons/md";
+import { AsideBar, PlaylistCard } from "../../components/";
+import { MdPlaylistPlay } from "react-icons/md";
 import { usePlaylistContext } from "../../context/playlist-context";
-import { PlaylistCard } from "../../components/Card/PlaylistCard/PlaylistCard";
 
 function PlaylistPage() {
-//   const { history } = useHistoryContext();
   const { playlist, setPlaylist } = usePlaylistContext();
 
   return (

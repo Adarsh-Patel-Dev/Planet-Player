@@ -1,6 +1,7 @@
 /*cards*/
 
 .cards {
+  width: 92%;
   padding: 3rem;
   display: flex;
   flex-wrap: wrap;

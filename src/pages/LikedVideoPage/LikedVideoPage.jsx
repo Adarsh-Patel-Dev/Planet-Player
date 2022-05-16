@@ -1,6 +1,6 @@
 import "../LandingPage/landingpage.css";
 import { AsideBar, SmallCard } from "../../components/";
-import { useLikeVideoContext } from "../../context/liked-video-context";
+import { useLikeVideoContext } from "../../context/";
 import { BiLike } from "react-icons/bi";
 
 function LikedVideoPage() {

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import "../LandingPage/landingpage.css";
-import { useVideoListing } from "../../context/video-listing-context";
+import { useVideoListing } from "../../context/";
 import { AsideBar, CardHorizontal } from "../../components/";
 
 function VideoListing() {

@@ -29,7 +29,14 @@ function PlaylistModal({ video }) {
 
             {playlist?.map((playlist) => {
               return (
-                <div className="checkbox-input" key={playlist._id}>
+                <div className="checkbox-input"
+                 onClick={()=>addToPlaylist(
+                            video,
+                            playlist._id,
+                            setPlaylist,
+                            toggleModal
+                          )}
+                 key={playlist._id}>
                   <input
                     type="checkbox"
                     onChange={(e) =>

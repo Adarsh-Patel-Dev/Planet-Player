@@ -1,7 +1,6 @@
 import "../LandingPage/landingpage.css";
-import { AsideBar, CardHorizontal, SmallCard } from "../../components/";
-import { useHistoryContext } from "../../context/history-context";
-// import { SmallCard} from "../../components/Card/SmallCard/SmallCard"
+import { AsideBar, SmallCard } from "../../components/";
+import { useHistoryContext } from "../../context";
 import { AiOutlineHistory } from "react-icons/ai";
 
 function HistoryPage() {

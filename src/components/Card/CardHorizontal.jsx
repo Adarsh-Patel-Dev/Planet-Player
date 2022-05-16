@@ -1,12 +1,8 @@
 import React from "react";
 import "./card.css";
 import { useNavigate } from "react-router-dom";
-import { BiLike } from "react-icons/bi";
-import { MdOutlineWatchLater, MdPlaylistPlay } from "react-icons/md";
-import { useHistoryContext } from "../../context/history-context";
-import { useLikeVideoContext } from "../../context/liked-video-context";
-import { usePlaylistContext } from "../../context/playlist-context";
-import { useWatchLaterContext } from "../../context/watchLater-context";
+import { MdOutlineWatchLater, MdPlaylistPlay, BiLike } from "../../Assets/Icons";
+import { useHistoryContext, useLikeVideoContext, usePlaylistContext, useWatchLaterContext } from "../../context/";
 
 function CardHorizontal({ video }) {
   const {

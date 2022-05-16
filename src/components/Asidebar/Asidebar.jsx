@@ -1,18 +1,16 @@
 import "./asidebar.css";
-import { BiLike, BiUserCircle } from "react-icons/bi";
-import { AiOutlineHistory, AiOutlineHome } from "react-icons/ai";
+import {  } from "react-icons/bi";
+import { AiOutlineHistory, AiOutlineHome ,BiLike} from "../../Assets/Icons";
+import { NavLink } from "react-router-dom";
 import {
   MdOutlineWatchLater,
   MdPlaylistPlay,
   MdOutlineExplore,
 } from "react-icons/md";
-import { Link, NavLink } from "react-router-dom";
 
 const AsideBar = () => {
   return (
     <aside className="aside-container">
-      {/* <div className="aside-body"> */}
-
       <ul className="aside-list">
         <li className="aside-item">
           <NavLink to="/" className="aside-link">
@@ -54,7 +52,6 @@ const AsideBar = () => {
           </NavLink>
         </li>
       </ul>
-      {/* </div> */}
     </aside>
   );
 };
