@@ -38,7 +38,7 @@ function CardHorizontal({ video }) {
           }}
           src={thumbnailUrl}
           className="img-fluid"
-          alt="Plant-Image"
+          alt={creator}
         />
 
         <ul className="card--options">

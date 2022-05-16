@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MdClose } from "react-icons/md";
 import { usePlaylistContext } from "../../context/playlist-context";
+import { Toast } from "../../components/Toast/Toast";
 import "./playlistmodal.css";
 
 function PlaylistModal({ video }) {
@@ -13,9 +14,6 @@ function PlaylistModal({ video }) {
     playlist,
     setPlaylist,
     addPlaylists,
-    removePlaylist,
-    getPlaylist,
-    getPlaylists,
     removeFromPlaylist,
     addToPlaylist,
   } = usePlaylistContext();
@@ -75,8 +73,20 @@ function PlaylistModal({ video }) {
               <button
                 onClick={() => {
                   playlistName.length > 0
-                    ? addPlaylists(playlistName, setPlaylist)
-                    : "";
+                    ? playlist.find(
+                        (playlist) =>
+                          playlist.title.playlistName == playlistName
+                      )
+                      ? Toast({
+                          type: "error",
+                          msg: `Playlist ${playlistName} already exists`,
+                        })
+                      : addPlaylists(playlistName, setPlaylist)
+                    : Toast({
+                        type: "error",
+                        msg: "Please enter playlist name",
+                      });
+                  setplaylistName("");
                 }}
                 className="btn-modal"
               >

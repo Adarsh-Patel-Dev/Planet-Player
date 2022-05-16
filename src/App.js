@@ -1,5 +1,5 @@
 import "./App.css";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import MockAPI from "./mockman/MockAPI";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
@@ -30,7 +30,7 @@ function App() {
         <Route path="/mockman" element={<MockAPI />} />
       </Routes>
       <Footer />
-      <ToastContainer />
+      <ToastContainer position="top-right" />
     </div>
   );
 }

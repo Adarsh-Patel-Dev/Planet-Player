@@ -1,58 +1,21 @@
-import { useEffect } from "react";
-import { MdClose } from "react-icons/md";
-import { useToastContext } from "../../context/toast-context";
-import './toast.css';
+import { Slide, toast, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Toast = () => {
-  const {
-    toastState: { toastList },
-    toastDispatch,
-  } = useToastContext();
+import React from 'react'
 
-  useEffect(() => {
-    const intervalId = setTimeout(() => {
-      if (toastList.length) {
-        toastDispatch({
-          type: "REMOVE-TOAST",
-          payload: [...toastList].filter(
-            (toast) => toastList[0].id !== toast.id
-          ),
-        });
-      }
-    }, 1500);
+function Toast({msg , type}) {
+  return toast( msg, {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    transition: Zoom,
+    progress: undefined,
+    type: type,
+    theme: "light"
+  })
+}
 
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [toastList, toastDispatch]);
-
-//   className:  toast--success, toast--info, toast--error
-
-  return (
-    <div className="toast-container">
-      {toastList.length > 0 &&
-        toastList.map((currToast) => (
-          <div key={currToast.id} className={`toast ${currToast.className}`}>
-            <div className="toast--header">
-              <MdClose
-                className="toast--close"
-                onClick={() =>
-                  toastDispatch({
-                    type: "ReMOVE-TOAST",
-                    payload: [...toastList].filter(
-                      (toast) => toast.id !== currToast.id
-                    ),
-                  })
-                }
-              />
-            </div>
-            <div className="toast--body">
-              <p>{currToast.message}</p>
-            </div>
-          </div>
-        ))}
-    </div>
-  );
-};
-
-export { Toast };
+export { Toast }

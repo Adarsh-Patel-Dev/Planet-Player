@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Toast } from "../components/Toast/Toast";
 import { createContext, useContext, useState } from "react";
 
 const HistoryContext = createContext();
@@ -18,10 +19,10 @@ const HistoryProvider = ({ children }) => {
       });
       if (response.status === 200) {
         setHistory(response.data.history);
-        console.log("all history", history);
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
   }
 
@@ -37,8 +38,10 @@ const HistoryProvider = ({ children }) => {
       });
       if (response.status === 201) {
         setHistory(response.data.history);
+        Toast({ type: "info", msg: "Video added to history" });
       }
     } catch (error) {
+      Toast({ type: "error", msg: error });
       console.error(error);
     }
   }
@@ -54,8 +57,11 @@ const HistoryProvider = ({ children }) => {
       });
       if (response.status === 200) {
         setHistory(response.data.history);
+        Toast({ type: "info", msg: "Video removed from history" });
+
       }
     } catch (error) {
+      Toast({ type: "error", msg: error });
       console.error(error);
     }
   }
@@ -70,9 +76,11 @@ const HistoryProvider = ({ children }) => {
         },
       });
       if (response.status === 200) {
+        Toast({ type: "info", msg: "Watch History cleared" });
         setHistory(response.data.history);
       }
     } catch (error) {
+      Toast({ type: "error", msg: error });
       console.error(error);
     }
   }

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Toast } from "../components/Toast/Toast";
 import { createContext, useContext, useState } from "react";
 
 const PlaylistContext = createContext();
@@ -27,6 +28,7 @@ const PlaylistProvider = ({ children }) => {
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
   }
 
@@ -46,10 +48,12 @@ const PlaylistProvider = ({ children }) => {
 
       if (response.status === 201) {
         setPlaylist(response.data.playlists);
+        Toast({ type: "success", msg: `${playlistName} playlist created` });
         console.table("added new playlists", playlist);
       }
     } catch (error) {
       console.error('this is error',error);
+      Toast({ type: "error", msg: error });
     }
   }
   console.table("added new playlist outside", playlist);
@@ -63,10 +67,12 @@ const PlaylistProvider = ({ children }) => {
       });
       if (response.status === 200) {
         setPlaylist(response.data.playlists);
+        Toast({ type: "info", msg: `Playlist removed ` });
         console.table("remove one playlists", playlist);
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
   }
 
@@ -78,14 +84,13 @@ const PlaylistProvider = ({ children }) => {
         headers: { authorization: localStorage.getItem("token") },
       });
 
-      // [play1,play2,play3].map(play => play._id === response.data.playlist._id ?  )
-
       if (response.status === 200) {
         setPlaylist(response.data.playlist);
         console.table("particular playlist", playlist);
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
   }
 
@@ -105,10 +110,12 @@ const PlaylistProvider = ({ children }) => {
           } return playlist
         })
         setPlaylist(updatedPlayList);
+        Toast({ type: "success", msg: `Video added to ${playlist[0].title.playlistName} playlist` });
         toggle();
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
   }
   console.table("added video to playlist outside", playlist);
@@ -125,14 +132,15 @@ const PlaylistProvider = ({ children }) => {
       if (response.status === 200) {
         setPlaylist(prev => prev.map(playlist => playlist._id === response.data.playlist._id ? response.data.playlist : playlist));
         console.table("removed video from inside playlists", response.data.playlist);
+        Toast({ type: "info", msg: `Video removed from ${playlist[0].title.playlistName}` });
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
   }
 
- 
-  console.table("removed video from playlists", playlist);
+
 
   const value = {
     toggleModal,
