@@ -12,7 +12,7 @@ body{
     background: var(--BLACK-60);
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 99;
 }
 
 .btn-icon{
@@ -43,13 +43,13 @@ body{
     align-items: center;
     letter-spacing: 0.2rem;
     font-weight: 500;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--LIGHT-GREEN);
 }
 
 .nav--search {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     align-items: center;
     justify-content: center;
     width: 3rem;
@@ -59,8 +59,8 @@ body{
 .nav--search--input {
     width: 40rem;
     border: none;
-    height: 3rem;
-    padding: 2rem;
+    height: 3.2rem;
+    padding: 0rem 2rem;
     background: rgba(255, 255, 255, 0.164);
     color: var(--WHITE);
     font-family: inherit;
@@ -72,7 +72,7 @@ body{
     border: 1px solid var(--WHITE);
     background-color: transparent;
     color: var(--WHITE);
-    padding: 1rem 1rem;
+    padding: 0.5rem 0.8rem;
     border-radius: 0.5rem;
     font-family: 'Montserrat', sans-serif;
 }

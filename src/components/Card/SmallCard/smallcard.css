@@ -1,0 +1,106 @@
+
+
+.card-small {
+    width: 90%;
+    height: auto;
+    background-color: var(--WHITE);
+    color: var(--BLACK-80);
+    border-radius: 8px;
+    padding: 8px;
+    font-weight: 400;
+    position: relative;
+    transition: 1s;
+    display: flex;
+    margin: auto;
+}
+
+.card-small:hover{
+  box-shadow: 0px 0px 15px var(--BOX-SHADOW);
+  
+}
+
+.card--image-small {
+    cursor:pointer;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 33%;
+    min-width: 22rem;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+}
+
+
+.card--body-small {
+    padding: 0;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0rem;
+    gap: 0rem;
+    width: 100%;
+    height: auto;
+}
+
+.card--details-small {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    grid-gap: 1rem;
+    grid-gap: 1rem;
+    gap: 1rem;
+    margin-top: -3px;
+    padding: 0;
+}
+
+.channel-logo-small {
+    display: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px var(--BOX-SHADOW);
+}
+.card--title {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
+
+.card--footer-small {
+    grid-gap: 1rem;
+    grid-gap: 1rem;
+    gap: 1rem;
+    margin: 0 -0.5rem;
+    padding: 10px;
+    justify-content: flex-start;
+    display: flex;
+}
+.card-channel-small {
+    color: #4f4f4f;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card-views-small {
+    color: var(--GRAY-80);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.card--options-small {
+    color: #5c5b5b;
+    z-index: 1;
+    position: absolute;
+    bottom: 0px;
+    left: 24rem;
+    width: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card--options-small li{
+    font-size: 2rem;
+}
+

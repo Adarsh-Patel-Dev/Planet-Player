@@ -1,0 +1,13 @@
+.card-overlay {
+    background-color: #ffffffac;
+    z-index: 1;
+    height: 100%;
+    position: absolute;
+    width: 40%;
+    right: 0;
+    display: flex;
+    font-size: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

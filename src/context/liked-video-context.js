@@ -1,6 +1,7 @@
 import { RepeatOn } from "@mui/icons-material";
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
+import { Toast } from "../components/Toast/Toast";
 
 const LikedVideoContext = createContext();
 const useLikeVideoContext = () => useContext(LikedVideoContext);
@@ -20,6 +21,7 @@ const LikedVideoProvider = ({ children }) => {
         setLikeVideo(response.data.likes);
       }
     } catch (error) {
+      Toast({ type: "error", msg: error });
       console.error(error);
     }
   }
@@ -34,8 +36,10 @@ const LikedVideoProvider = ({ children }) => {
       });
       if (response.status === 201) {
         setLikeVideo(response.data.likes);
+        Toast({ type: "success", msg: "Video added to liked videos" });
       }
     } catch (error) {
+      Toast({ type: "error", msg: error });
       console.error(error);
     }
   }
@@ -47,12 +51,19 @@ const LikedVideoProvider = ({ children }) => {
         url: `/api/user/likes/${videoId}`,
         headers: { authorization: localStorage.getItem("token") },
       });
-      if (response.status === 201) {
+      if (response.status === 200) {
         setLikeVideo(response.data.likes);
+        Toast({ type: "info", msg: "Video removed from liked videos" });
       }
     } catch (error) {
+      Toast({ type: "error", msg: error });
       console.error(error);
     }
+  }
+
+  function clearLikedVideos() {
+    setLikeVideo([]);
+    Toast({ type: "info", msg: "All Videos removed from liked videos" });
   }
 
   return (
@@ -63,6 +74,7 @@ const LikedVideoProvider = ({ children }) => {
         getLikeVideo,
         addToLikeVideo,
         removeFromLikeVideo,
+        clearLikedVideos,
       }}
     >
       {children}

@@ -1,12 +1,8 @@
 import React from "react";
 import "./card.css";
 import { useNavigate } from "react-router-dom";
-import { BiLike } from "react-icons/bi";
-import { MdOutlineWatchLater, MdPlaylistPlay } from "react-icons/md";
-import { useHistoryContext } from "../../context/history-context";
-import { useLikeVideoContext } from "../../context/liked-video-context";
-import { usePlaylistContext } from "../../context/playlist-context";
-import { useWatchLaterContext } from "../../context/watchLater-context";
+import { MdOutlineWatchLater, BiLike } from "../../Assets/Icons";
+import { useHistoryContext, useLikeVideoContext, usePlaylistContext, useWatchLaterContext } from "../../context/";
 
 function CardHorizontal({ video }) {
   const {
@@ -26,7 +22,6 @@ function CardHorizontal({ video }) {
 
   const { addToHistory, setHistory } = useHistoryContext();
   const { addToLikeVideo, setLikeVideo } = useLikeVideoContext();
-  const { addPlaylists, addToPlaylist } = usePlaylistContext();
   const { addToWatchLater, setWatchLater } = useWatchLaterContext();
   return (
     <div className="card" key={_id}>
@@ -38,15 +33,12 @@ function CardHorizontal({ video }) {
           }}
           src={thumbnailUrl}
           className="img-fluid"
-          alt="Plant-Image"
+          alt={creator}
         />
 
         <ul className="card--options">
           <li onClick={() => addToWatchLater(video, setWatchLater)}>
             <MdOutlineWatchLater />
-          </li>
-          <li onClick={addToPlaylist}>
-            <MdPlaylistPlay />
           </li>
           <li onClick={() => addToLikeVideo(video, setLikeVideo)}>
             <BiLike />

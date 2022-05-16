@@ -1,0 +1,123 @@
+.modal--container {
+  backdrop-filter: brightness(0.09);
+  position: fixed;
+  min-width: 10rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2rem;
+  grid-gap: 2rem;
+  grid-gap: 2rem;
+  gap: 2rem;
+  padding: 2rem;
+  z-index: 99;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  border-radius: 5px;
+  background-color: var(--GRAY-80);
+  color: var(--WHITE);
+  width: min-content;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.divider {
+  margin: 5px auto;
+  width: 100%;
+  background-color: gray;
+  height: 1px;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid greenyellow;
+  color: white;
+  padding: 0rem 2rem 0.5rem 0.2rem;
+}
+
+.modal-content {
+  padding: 0.5rem;
+  position: relative;
+}
+
+.label {
+  margin-bottom: -8px;
+  padding-top: 0.5rem;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.close:hover {
+  color: red;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.checkbox-input {
+  cursor: pointer;
+  display: flex;
+  grid-gap: 1rem;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: baseline;
+}
+
+.checkbox {
+  cursor: pointer;
+  accent-color: greenyellow;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.playlist-name {
+  font-size: 1.5rem;
+}
+
+.btn-modal {
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  right: -14.3rem;
+  border: transparent;
+  background: transparent;
+  color: greenyellow;
+  padding: 0.5rem 0;
+  transition: 1s;
+}
+
+.btn-modal:hover {
+  border-radius: 5px;
+  position: relative;
+  right: -14.1rem;
+  transition: 1s;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: greenyellow;
+  color: var(--GRAY-80);
+}
+
+.modal-title {
+  color: rgb(152, 208, 253);
+  font-size: 1.5rem;
+}

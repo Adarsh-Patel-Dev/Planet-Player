@@ -1,5 +1,6 @@
 import React from "react";
 import "./landingpage.css";
+import { Link, NavLink } from "react-router-dom";
 import { AsideBar, Hero } from "../../components/";
 
 function LandingPage() {
@@ -16,15 +17,16 @@ function LandingPage() {
 
       <div className="category-header">
         <h3 className="category-subheading">Trending Videos</h3>
-        {/* <NavLink to='/videos' > */}
-        <button className="btn btn--primary">View All</button>
-        {/* </NavLink>  */}
+        {/* <NavLink to="/videolisting"> */}
+          <button onClick={() => {}} className="btn btn--primary">
+            View All
+          </button>
+          
+        {/* </NavLink> */}
       </div>
 
       <section className="cards">
-        <div className="card--container">
-          
-        </div>
+        <div className="card--container"></div>
       </section>
     </div>
   );

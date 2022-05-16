@@ -1,5 +1,6 @@
 import { RepeatOneSharp } from "@mui/icons-material";
 import axios from "axios";
+import { Toast } from "../components/Toast/Toast";
 import { createContext, useContext, useState } from "react";
 
 const WatchLaterContext = createContext();
@@ -33,9 +34,11 @@ const WatchLaterProvider = ({ children }) => {
       });
       if (response.status === 201) {
         setWatchLater(response.data.watchlater);
+        Toast({ type: "success", msg: "Video added to watchlater" });
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
   }
 
@@ -48,10 +51,16 @@ const WatchLaterProvider = ({ children }) => {
       });
       if (response.status === 200) {
         setWatchLater(response.data.watchlater);
+        Toast({ type: "info", msg: "Video removed from watchlater" });
       }
     } catch (error) {
       console.error(error);
+      Toast({ type: "error", msg: error });
     }
+  }
+
+  function clearWatchlater(){
+    setWatchLater([])
   }
 
   return (
@@ -61,6 +70,7 @@ const WatchLaterProvider = ({ children }) => {
         watchLater,
         addToWatchLater,
         removeFromWatchLater,
+        clearWatchlater,
       }}
     >
       {children}
