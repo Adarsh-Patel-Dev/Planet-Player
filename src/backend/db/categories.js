@@ -8,39 +8,57 @@ import { v4 as uuid } from "uuid";
 export const categories = [
   {
     _id: uuid(),
-    categoryName: "flower",
+    categoryName: "Ferrari",
     url:"https://youtu.be/PKZABq7Llzs",
     iframe: "" ,
-    image: "https://i.ytimg.com/an_webp/PKZABq7Llzs/mqdefault_6s.webp?du=3000&sqp=CMukipMG&rs=AOn4CLDU_4QTTt2cDXvPY1uuqP6sy3-H-g",
+    image: "https://www.carlogos.org/car-logos/ferrari-logo-750x1100.png",
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "Ferrari’s symbol can be traced to the Italian fighter ace Francesco Baracca who painted the black prancing horse onto the fuselage of his plane. He recorded 34 kills and was killed in 1918, becoming a national hero",
   },
   {
     _id: uuid(),
-    categoryName: "indoor",
+    categoryName: "BMW",
     url:"https://youtu.be/kWr8SvbUGMo",
     iframe: "",
-    image: "https://i.ytimg.com/an_webp/kWr8SvbUGMo/mqdefault_6s.webp?du=3000&sqp=CL6MipMG&rs=AOn4CLDtDPM-YRi6NrNFpNMWrLnpfMjohQ",
+    image: "https://www.carlogos.org/car-logos/bmw-logo-2020-blue-white.png",
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "For only the fifth time since its introduction in 1917, BMW is redesigning its logo, the famous roundel.For BMW, the blue and white colors of the BMW logo symbolized the Bavarian flag colors and represented the company’s origin.",
   },
   {
     _id: uuid(),
-    categoryName: "shrubs",
+    categoryName: "Lamborghini",
     url:"https://youtu.be/kBrMR2m5G0o",
     iframe: "",
-    image: "https://i.ytimg.com/an_webp/kBrMR2m5G0o/mqdefault_6s.webp?du=3000&sqp=CNikipMG&rs=AOn4CLAVD1UIL7Wjah8M_w_UA607y7ldNA",
+    image: "https://www.carlogos.org/car-logos/lamborghini-logo-1000x1100.png",
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "The Lamborghini logo is in the shape of a shield that is filled with a black background and outlined with gold. Across the top of the shield is the word Lamborghini in capital letters above an image of a golden bull.",
   },
   {
     _id: uuid(),
-    categoryName: "climber",
+    categoryName: "Buggati",
     url:"https://youtu.be/rEsMlbdC1r8",
     iframe: "",
-    image: "https://i.ytimg.com/an_webp/rEsMlbdC1r8/mqdefault_6s.webp?du=3000&sqp=CM6iipMG&rs=AOn4CLA5FET-79jp_-cg4iURryb76K0wJA",
+    image: "https://www.carlogos.org/logo/Bugatti-logo-1024x768.png",
     description:
-      "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing",
+      "Automobiles Ettore Bugatti was a French car manufacturer of high-performance automobiles, founded in 1909 in the then German city of Molsheim, Alsace by Italian-born Ettore Bugatti. In the 1990s, an Italian entrepreneur revived it as a builder of limited production exclusive sports cars. Today, the name is owned by German automobile manufacturing group Volkswagen.",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Audi",
+    url:"https://youtu.be/rEsMlbdC1r8",
+    iframe: "",
+    image: "https://www.carlogos.org/car-logos/audi-logo-2016.png",
+    description:
+      "In 1932, the four companies Audi, DKW, Horch and Wanderer joined together to form Auto Union AG, which would later become AUDI AG. And the company needed a new logo. The four interlocking rings were born.Audi AG, also simply known as Audi, is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles.",
+  },
+  {
+    _id: uuid(),
+    categoryName: "Jaguar",
+    url:"https://youtu.be/rEsMlbdC1r8",
+    iframe: "",
+    image: "https://www.carlogos.org/logo/Jaguar-logo-2012-1920x1080.png",
+    description:
+      "IJaguar is a British car manufacturer founded in 1922, is now a division of Jaguar Land Rover owned by Tata Motors, which purchased it from Ford in 2008.Because Jaguar occupies both the performance and luxury markets, its competition is particularly diverse. It includes Porsche, Mercedes-Benz, BMW, Lexus, Cadillac, Infiniti, as well as Lincoln in the U.S..",
   },
   
 ];

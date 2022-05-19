@@ -62,7 +62,7 @@ body{
     height: 3.2rem;
     padding: 0rem 2rem;
     background: rgba(255, 255, 255, 0.164);
-    color: var(--WHITE);
+    /* color: var(--WHITE); */
     font-family: inherit;
     border-radius: 0.5rem;
 }
@@ -98,8 +98,8 @@ body{
 .btn-solid {
     color: var(--WHITE);
     background-color: var(--LIGHT-GREEN);
-    border: 1px solid var(--WHITE);
-    padding: 1rem 1rem;
+    border: transparent;
+    padding: 0.7rem 1rem;
     font-family: 'Montserrat', sans-serif;
 }
 

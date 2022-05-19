@@ -8,6 +8,7 @@ const useLikeVideoContext = () => useContext(LikedVideoContext);
 
 const LikedVideoProvider = ({ children }) => {
   const [likedVideo, setLikeVideo] = useState([]);
+  const [isLike, setIsLike] = useState(false);
 
   async function getLikeVideo() {
     try {
@@ -26,7 +27,7 @@ const LikedVideoProvider = ({ children }) => {
     }
   }
 
-  async function addToLikeVideo(video, setLikeVideo) {
+  async function addToLikeVideo(video, setLikeVideo, setIsLike) {
     try {
       const response = await axios({
         method: "POST",
@@ -35,6 +36,7 @@ const LikedVideoProvider = ({ children }) => {
         data: { video: video },
       });
       if (response.status === 201) {
+        setIsLike(!isLike)
         setLikeVideo(response.data.likes);
         Toast({ type: "success", msg: "Video added to liked videos" });
       }
@@ -44,7 +46,7 @@ const LikedVideoProvider = ({ children }) => {
     }
   }
 
-  async function removeFromLikeVideo(videoId, setLikeVideo) {
+  async function removeFromLikeVideo(videoId, setLikeVideo,setIsLike) {
     try {
       const response = await axios({
         method: "DELETE",
@@ -52,6 +54,7 @@ const LikedVideoProvider = ({ children }) => {
         headers: { authorization: localStorage.getItem("token") },
       });
       if (response.status === 200) {
+        setIsLike(!isLike)
         setLikeVideo(response.data.likes);
         Toast({ type: "info", msg: "Video removed from liked videos" });
       }
@@ -69,6 +72,8 @@ const LikedVideoProvider = ({ children }) => {
   return (
     <LikedVideoContext.Provider
       value={{
+        isLike,
+        setIsLike,
         likedVideo,
         setLikeVideo,
         getLikeVideo,

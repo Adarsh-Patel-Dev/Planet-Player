@@ -23,7 +23,7 @@ function SingleVideoCard() {
 
   const { videoList } = useVideoListing();
   const { toggleModal } = usePlaylistContext();
-  const { addToLikeVideo, setLikeVideo, removeFromLikeVideo } =
+  const { isLike, setIsLike, addToLikeVideo, setLikeVideo, removeFromLikeVideo } =
     useLikeVideoContext();
   const { addToWatchLater, setWatchLater } = useWatchLaterContext();
 
@@ -71,17 +71,13 @@ function SingleVideoCard() {
               </div>
               <div className="actions-buttons">
                 <span>
-                  <AiOutlineLike
-                    onClick={() =>
-                      addToLikeVideo(filteredVideo[0], setLikeVideo)
-                    }
-                  />
+                   
+                 { !isLike ? <AiOutlineLike  onClick={() =>
+                      addToLikeVideo(filteredVideo[0], setLikeVideo, setIsLike)
+                    }/> : <AiFillLike  onClick={() => removeFromLikeVideo(_id, setLikeVideo, setIsLike)} />}
+                  
                 </span>
-                <span>
-                  <AiOutlineDislike
-                    onClick={() => removeFromLikeVideo(_id, setLikeVideo)}
-                  />
-                </span>
+              
                 <span>
                   <MdPlaylistAdd onClick={toggleModal} />
                 </span>
