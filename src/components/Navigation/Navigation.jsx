@@ -51,17 +51,16 @@ const Navigation = () => {
 
         <div className="nav--links">
           <ul className="nav--list">
-          {/* <li className="nav--item"><Avatar/></li> */}
             <li className="nav--item">
               {!token ? (
                 
                 <NavLink
-                  to="/login"
+                  to="/signup"
                   className="nav--link"
                   state={{ from: location }}
                 >
                 
-                  <span className="nav--link link-btn btn-solid">Login</span>
+                  <span className="nav--link link-btn btn-solid">Signup</span>
                 </NavLink>
               ) : (<div style={{display:"flex", gap:"1rem", alignItems:"center"}}> 
               <Avatar/>               
