@@ -41,7 +41,9 @@ const Login = () => {
             authDispatch({ type: "PASSWORD", payload: e.target.value })
           }
           value={password}
+          minlength="6"
           type="password"
+          name="password"
           className="signup-input"
           placeholder="Password"
           required
@@ -69,6 +71,10 @@ const Login = () => {
         >
           Login
         </button>
+        <button className="btn-login"
+         onClick={()=>login("adarshbalika@gmail.com","adarshBalika123",navigate,location,encodedToken)}
+        >Test Login</button>
+
         <span className="signup-span">
          New User ?
           <button

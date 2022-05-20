@@ -12,7 +12,7 @@ const AuthReducer = (state, { type, payload }) => {
       return { ...state, email: payload };
 
     case "PASSWORD":
-      return { ...state, pasword: payload };
+      return { ...state, password: payload };
 
     case "CONFIRM_PASSWORD":
       return { ...state, confirmPassword: payload };
@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
     firstName: "",
     lastname: "",
     email: "",
-    pasword: "",
+    password: "",
     confirmPassword: "",
   });
 
@@ -88,11 +88,10 @@ const AuthProvider = ({ children }) => {
           password: password,
         },
       });
-      if (response.status === 201) {
+      if (response.status === 200) {
         localStorage.setItem("token",response.data.encodedToken);
         navigate(location?.state?.from?.pathname, { replace: true})
-      Toast({ type: "sucess", msg: "Log In successful😃" });
-       setTimeout(()=>{Toast({ type: "sucess", msg: `Welcome ${response.data.createdUser.someUserAttribute1}😃` });},2000)
+        Toast({ type: "success", msg: "Log In successful😃" });
       }
     } catch (error) {
       console.log(error);
