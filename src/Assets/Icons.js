@@ -1,6 +1,6 @@
 export { 
     BiLike, 
-    BiUserCircle,
+    BiUserCircle, BiUser
  } from "react-icons/bi";
 
 export {
@@ -8,7 +8,7 @@ export {
   MdOutlineExplore,
   MdOutlineWatchLater,
   MdPlaylistAdd,
-  MdLogout,
+  MdLogout,MdLogin,
   MdSearch,
 } from "react-icons/md";
 
@@ -19,6 +19,7 @@ export {
   AiOutlineLike,
   AiOutlineHistory,
   AiOutlineHome,
+  AiOutlineUser,
 } from "react-icons/ai";
 
 export { 

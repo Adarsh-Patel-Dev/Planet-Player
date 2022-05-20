@@ -98,8 +98,8 @@ body{
 .btn-solid {
     color: var(--WHITE);
     background-color: var(--LIGHT-GREEN);
-    border: 1px solid var(--WHITE);
-    padding: 1rem 1rem;
+    border: transparent;
+    padding: 0.7rem 1rem;
     font-family: 'Montserrat', sans-serif;
 }
 

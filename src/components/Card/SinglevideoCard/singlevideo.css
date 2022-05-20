@@ -52,9 +52,15 @@
 }
 
 .actions-buttons {
+    color: var(--GRAY-80);
     display: flex;
     justify-content: flex-end;
     gap:2rem
+}
+
+.actions-buttons span:hover{
+    color: rgb(0, 143, 143);
+    
 }
 
 .actions-buttons span {
