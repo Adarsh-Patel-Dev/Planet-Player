@@ -38,7 +38,6 @@ const HistoryProvider = ({ children }) => {
       });
       if (response.status === 201) {
         setHistory(response.data.history);
-        Toast({ type: "info", msg: "Video added to history" });
       }
     } catch (error) {
       Toast({ type: "error", msg: error });

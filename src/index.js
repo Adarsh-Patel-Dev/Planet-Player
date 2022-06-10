@@ -10,6 +10,7 @@ import { HistoryProvider } from "./context/history-context";
 import { LikedVideoProvider } from "./context/liked-video-context";
 import { PlaylistProvider } from "./context/playlist-context";
 import { AuthProvider } from "./context";
+import { CategoryProvider } from "./context/category-context";
 
 // Call make Server
 makeServer();
@@ -23,7 +24,9 @@ ReactDOM.render(
             <HistoryProvider>
               <LikedVideoProvider>
                 <PlaylistProvider>
+                <CategoryProvider>
                   <App />
+                </CategoryProvider>
                 </PlaylistProvider>
               </LikedVideoProvider>
             </HistoryProvider>

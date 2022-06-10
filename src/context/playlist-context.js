@@ -57,12 +57,12 @@ const PlaylistProvider = ({ children }) => {
 
   async function removePlaylist(playlistId, setPlaylist) {
     try {
-      const response = axios({
+      const response = await axios({
         method: "DELETE",
         url: `/api/user/playlists/${playlistId}`,
         headers: { authorization: localStorage.getItem("token") },
       });
-      if (response.status === 200) {
+      if (true) {
         setPlaylist(response.data.playlists);
         Toast({ type: "info", msg: `Playlist removed ` });
       }

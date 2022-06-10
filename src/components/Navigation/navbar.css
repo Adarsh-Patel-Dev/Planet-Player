@@ -19,7 +19,12 @@ body{
     color: var(--WHITE);
 }
 
-
+.logo-icon{
+        position: relative;
+        top: 4px;
+        right: 2px;
+    color: var(--LIGHT-GREEN);
+}
 
 .nav--body {
     padding: 1rem;

@@ -43,7 +43,6 @@ const AuthProvider = ({ children }) => {
     try {
       const regExForEmail =  /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
       if(encodedToken){
-          console.log("already loggedIN")
           Toast({ type: "info", msg: `Hey ${response.data.createdUser.someUserAttribute1}, you're already Logged IN 😎`  });
       }
       if(regExForEmail.test(email)){
@@ -59,7 +58,6 @@ const AuthProvider = ({ children }) => {
       });
       if (response.status === 201) {
         localStorage.setItem("token",response.data.encodedToken);
-        console.table("token",response);
         navigate(location?.state?.from?.pathname, { replace: true})
         Toast({ type: "sucess", msg: `Welcome ${response.data.createdUser.someUserAttribute1}` });
         setUserName(response.data.createdUser.someUserAttribute1)
@@ -77,7 +75,6 @@ const AuthProvider = ({ children }) => {
   async function login(email, password, navigate, location, encodedToken) {
     try {
         if(encodedToken){
-            console.log("ALready loggedIN")
             Toast({ type: "info", msg: `Hey ${response.data.createdUser.someUserAttribute1}, you're already Logged IN 😎`  });            
         }
       const response = await axios({

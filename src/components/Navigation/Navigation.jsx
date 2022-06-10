@@ -31,7 +31,7 @@ const Navigation = () => {
           <div className="nav--header">
             <h2 class="nav--title">
               Pl
-              <span style={{ color: "green" }}>
+              <span className="logo-icon">
                 <FaPlayCircle />
               </span>
               ynet

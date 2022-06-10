@@ -4,7 +4,7 @@ import { useLikeVideoContext } from "../../context/";
 import { BiLike } from "react-icons/bi";
 
 function LikedVideoPage() {
-  const { likedVideo, clearLikedVideos, setLikeVideo, removeFromLikeVideo } =
+  const { likedVideo, clearLikedVideos, setLikeVideo, removeFromLikeVideo, setIsLike  } =
     useLikeVideoContext();
 
   return (
@@ -29,7 +29,7 @@ function LikedVideoPage() {
                 key={video._id}
                 video={video}
                 removeFunction={() =>
-                  removeFromLikeVideo(video._id, setLikeVideo)
+                  removeFromLikeVideo(video._id, setLikeVideo, setIsLike )
                 }
               />
             ))}

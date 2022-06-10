@@ -1,9 +1,12 @@
 import React from "react";
 import "../card.css";
 import "./playlistcard.css";
+import {  MdDeleteOutline } from "react-icons/md";
+
 
 import { useNavigate } from "react-router-dom";
 import { MdPlaylistPlay } from "react-icons/md";
+import { usePlaylistContext } from "../../../context";
 
 function PlaylistCard({ playlist }) {
   const {
@@ -11,6 +14,7 @@ function PlaylistCard({ playlist }) {
     _id,
     videos,
   } = playlist;
+  const { removePlaylist, setPlaylist } = usePlaylistContext(); 
 
   const img =
     videos.length > 0
@@ -37,8 +41,11 @@ function PlaylistCard({ playlist }) {
       </div>
 
       <div className="card--body">
-        <div className="card--details">
+        <div className="card--details--playlist">
           <h4 className="card--title">{playlistName}</h4>
+          <i className="playlist-delete-icon">
+          <MdDeleteOutline onClick={()=>removePlaylist(_id, setPlaylist)}/>
+          </i>
         </div>
       </div>
     </div>

@@ -37,7 +37,8 @@ function SmallCard({video, removeFunction}) {
       />
 
       <ul className="card--options-small">
-        <li 
+      {/* ======================TODO-to be implemented in future====================== */}
+        {/* <li 
         // onClick={() => addToWatchLater(video, setWatchLater)}
         >
           <MdOutlineWatchLater />
@@ -47,7 +48,7 @@ function SmallCard({video, removeFunction}) {
         >
           <MdPlaylistPlay />
         </li>
-        
+         */}
       </ul>
 
       <span className="duration-label">{duration}</span>
