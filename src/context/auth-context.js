@@ -88,7 +88,7 @@ const AuthProvider = ({ children }) => {
       if (response.status === 200) {
         localStorage.setItem("token",response.data.encodedToken);
         navigate(location?.state?.from?.pathname, { replace: true})
-        Toast({ type: "success", msg: "Log In successful😃" });
+        Toast({ type: "success", msg: "Log In successful" });
       }
     } catch (error) {
       console.log(error);

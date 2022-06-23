@@ -38,7 +38,7 @@ const LikedVideoProvider = ({ children }) => {
       if (response.status === 201) {
         setIsLike(!isLike)
         setLikeVideo(response.data.likes);
-        Toast({ type: "success", msg: "Video added to liked videos" });
+        Toast({ type: "success", msg: "Video added to favourites" });
       }
     } catch (error) {
       Toast({ type: "error", msg: error });
@@ -56,7 +56,7 @@ const LikedVideoProvider = ({ children }) => {
       if (response.status === 200) {
         setIsLike(!isLike)
         setLikeVideo(response.data.likes);
-        Toast({ type: "info", msg: "Video removed from liked videos" });
+        Toast({ type: "info", msg: "Video removed from favourites" });
       }
     } catch (error) {
       Toast({ type: "error", msg: error });
@@ -66,7 +66,7 @@ const LikedVideoProvider = ({ children }) => {
 
   function clearLikedVideos() {
     setLikeVideo([]);
-    Toast({ type: "info", msg: "All Videos removed from liked videos" });
+    Toast({ type: "info", msg: "All videos removed from favourites" });
   }
 
   return (

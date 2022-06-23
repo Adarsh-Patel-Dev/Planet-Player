@@ -5,7 +5,8 @@ import { useWatchLaterContext } from "../../context/";
 import { MdOutlineWatchLater } from "react-icons/md";
 
 function WatchLater() {
-  const { watchLater, clearWatchlater, setWatchLater, removeFromWatchLater } =
+  const { watchLater, clearWatchlater, setWatchLater, removeFromWatchLater,inWatchLater,
+    setInWatchLater, } =
     useWatchLaterContext();
 
   return (
@@ -30,7 +31,7 @@ function WatchLater() {
                 key={video._id}
                 video={video}
                 removeFunction={() =>
-                  removeFromWatchLater(video._id, setWatchLater)
+                  removeFromWatchLater(video._id, setWatchLater,setInWatchLater)
                 }
               />
             ))}

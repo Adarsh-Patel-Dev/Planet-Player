@@ -5,7 +5,9 @@ import { PlaylistModal } from "../../PlaylistModal/PlaylistModal";
 import { useParams } from "react-router-dom";
 import {
   MdOutlineWatchLater,
+  MdWatchLater,
   MdPlaylistAdd,
+  MdPlaylistAddCheck,
   AiFillDislike,
   AiFillLike,
   AiOutlineDislike,
@@ -22,10 +24,12 @@ function SingleVideoCard() {
   const { videoId } = useParams();
 
   const { videoList } = useVideoListing();
-  const { toggleModal } = usePlaylistContext();
+  const { toggleModal,inPlaylist, 
+    setInPlaylist } = usePlaylistContext();
   const { isLike, setIsLike, addToLikeVideo, setLikeVideo, removeFromLikeVideo } =
     useLikeVideoContext();
-  const { addToWatchLater, setWatchLater } = useWatchLaterContext();
+  const { addToWatchLater, removeFromWatchLater, setWatchLater, inWatchLater,
+    setInWatchLater, } = useWatchLaterContext();
 
   const filteredVideo = videoList.filter((video) => video._id === videoId);
 
@@ -79,15 +83,27 @@ function SingleVideoCard() {
                 </span>
               
                 <span>
+                {
+                  !inPlaylist ?
                   <MdPlaylistAdd onClick={toggleModal} />
+                  :
+                  <MdPlaylistAddCheck onClick={toggleModal} />
+                }
                 </span>
                 <PlaylistModal video={filteredVideo[0]} />
                 <span>
+
+                {
+                  !inWatchLater ? 
                   <MdOutlineWatchLater
                     onClick={() =>
-                      addToWatchLater(filteredVideo[0], setWatchLater)
+                      addToWatchLater(filteredVideo[0], setWatchLater, setInWatchLater)
                     }
-                  />
+                  /> : <MdWatchLater
+                    onClick={() =>
+                      removeFromWatchLater(_id, setWatchLater, setInWatchLater)
+                    } />
+                }
                 </span>
               </div>
             </div>

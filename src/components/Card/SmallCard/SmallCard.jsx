@@ -63,7 +63,7 @@ function SmallCard({video, removeFunction}) {
         <h4 className="card--title-small">{title}</h4>
         <span 
         onClick={removeFunction}
-        className='remove-btn'><MdClose/></span>
+        className='remove-btn'><MdClose className='icon'/></span>
         </div>
       </div>
 

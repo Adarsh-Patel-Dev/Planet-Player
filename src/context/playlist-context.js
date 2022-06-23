@@ -7,6 +7,7 @@ const usePlaylistContext = () => useContext(PlaylistContext);
 
 const PlaylistProvider = ({ children }) => {
   const [playlist, setPlaylist] = useState([]);
+  const [inPlaylist, setInPlaylist] = useState(false);
 
   const [display, setDisplay] = useState("none");
 
@@ -89,7 +90,7 @@ const PlaylistProvider = ({ children }) => {
     }
   }
 
-  async function addToPlaylist(cardData, playlistId, setPlaylist, toggle) {
+  async function addToPlaylist(cardData, playlistId, setPlaylist, toggle,setInPlaylist) {
     try {
       const response = await axios({
         method: "POST",
@@ -99,6 +100,7 @@ const PlaylistProvider = ({ children }) => {
       });
 
       if (response.status === 201) {
+        setInPlaylist(!inPlaylist)
         const updatedPlayList = playlist.map((playlist) => {
           if (playlist._id === response.data.playlist._id) {
             return { ...response.data.playlist };
@@ -118,7 +120,7 @@ const PlaylistProvider = ({ children }) => {
     }
   }
 
-  async function removeFromPlaylist(playlistId, videoId, setPlaylist) {
+  async function removeFromPlaylist(playlistId, videoId, setPlaylist, setInPlaylist) {
     try {
       const response = await axios({
         method: "DELETE",
@@ -126,6 +128,7 @@ const PlaylistProvider = ({ children }) => {
         headers: { authorization: localStorage.getItem("token") },
       });
       if (response.status === 200) {
+        setInPlaylist(!inPlaylist)
         setPlaylist((prev) =>
           prev.map((playlist) =>
             playlist._id === response.data.playlist._id
@@ -156,6 +159,8 @@ const PlaylistProvider = ({ children }) => {
     getPlaylists,
     removeFromPlaylist,
     addToPlaylist,
+    inPlaylist, 
+    setInPlaylist
   };
   return (
     <PlaylistContext.Provider value={value}>

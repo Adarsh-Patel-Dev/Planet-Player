@@ -1,6 +1,7 @@
 /*cards*/
 
 .cards {
+  align-content: baseline;
   width: 92%;
   display: flex;
   flex-wrap: wrap;
