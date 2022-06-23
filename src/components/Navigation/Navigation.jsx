@@ -38,7 +38,7 @@ const Navigation = () => {
             </h2>
           </div>
         </NavLink>
-        <div className="nav--search">
+        {/* <div className="nav--search">
           <input
             type="text"
             placeholder="Search here"
@@ -47,7 +47,7 @@ const Navigation = () => {
           <button className="nav--search--btn">
             <MdSearch />
           </button>
-        </div>
+        </div> */}
 
         <div className="nav--links">
           <ul className="nav--list">
@@ -63,7 +63,7 @@ const Navigation = () => {
                   <span className="nav--link link-btn btn-solid">Signup</span>
                 </NavLink>
               ) : (<div style={{display:"flex", gap:"1rem", alignItems:"center"}}> 
-              <Avatar/>               
+              {/* <Avatar/> */}
               <NavLink
                   to="/logout"
                   className="nav--link"
