@@ -5,6 +5,8 @@ import { AsideBar, CardHorizontal } from "../../components/";
 
 function VideoListing() {
   const { videoList } = useVideoListing();
+  const suffleVideos = videoList.sort(()=>Math.random() - 0.5 )
+
 
   return (
     <div>
@@ -12,7 +14,7 @@ function VideoListing() {
         <AsideBar />
         <section className="cards">
           <div className="card--container">
-            {videoList?.map((video) => (
+            {suffleVideos?.map((video) => (
               <CardHorizontal key={video._id} video={video} />
             ))}
           </div>

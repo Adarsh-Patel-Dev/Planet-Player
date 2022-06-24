@@ -25,7 +25,7 @@ const WatchLaterProvider = ({ children }) => {
     }
   }
 
-  async function addToWatchLater(video, setWatchLater, setInWatchLater) {
+  async function addToWatchLater(video, setWatchLater,setInWatchLater) {
     try {
       const response = await axios({
         method: "POST",
@@ -34,6 +34,7 @@ const WatchLaterProvider = ({ children }) => {
         data: { video: video },
       });
       if (response.status === 201) {
+
         setInWatchLater(!inWatchLater)
         setWatchLater(response.data.watchlater);
         Toast({ type: "success", msg: "Video added to watchlater" });
@@ -44,7 +45,7 @@ const WatchLaterProvider = ({ children }) => {
     }
   }
 
-  async function removeFromWatchLater(videoId, setWatchLater, setInWatchLater) {
+  async function removeFromWatchLater(videoId, setWatchLater,setInWatchLater  ) {
     try {
       const response = await axios({
         method: "DELETE",

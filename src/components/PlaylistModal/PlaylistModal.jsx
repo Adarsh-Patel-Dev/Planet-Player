@@ -19,6 +19,7 @@ function PlaylistModal({ video }) {
     inPlaylist, 
     setInPlaylist
   } = usePlaylistContext();
+  console.log("inplay",inPlaylist)
   return (
     <div style={{ display: display }} className="modal--container">
       <div id="myModal" className="modal">

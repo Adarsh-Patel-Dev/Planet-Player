@@ -1,8 +1,19 @@
 import React from "react";
 import "./card.css";
 import { useNavigate, useLocation } from "react-router-dom";
-import { MdOutlineWatchLater, BiLike } from "../../Assets/Icons";
-import { useHistoryContext, useLikeVideoContext, usePlaylistContext, useWatchLaterContext } from "../../context/";
+import {
+  MdOutlineWatchLater,
+  MdWatchLater,
+  BiLike,
+  AiFillLike,
+  AiOutlineLike,
+} from "../../Assets/Icons";
+import {
+  useHistoryContext,
+  useLikeVideoContext,
+  usePlaylistContext,
+  useWatchLaterContext,
+} from "../../context/";
 
 function CardHorizontal({ video }) {
   const {
@@ -20,17 +31,24 @@ function CardHorizontal({ video }) {
   } = video;
 
   const navigate = useNavigate();
-  const encodedToken = localStorage.getItem("token")
+  const encodedToken = localStorage.getItem("token");
 
   const { addToHistory, setHistory } = useHistoryContext();
-  const { setIsLike, addToLikeVideo, setLikeVideo } = useLikeVideoContext();
-  const { addToWatchLater, setWatchLater } = useWatchLaterContext();
+  const { setIsLike, isLike, addToLikeVideo, setLikeVideo } =
+    useLikeVideoContext();
+  const {
+    addToWatchLater,
+    removeFromWatchLater,
+    setWatchLater,
+    inWatchLater,
+    setInWatchLater,
+  } = useWatchLaterContext();
   return (
     <div className="card" key={_id}>
       <div className="card--image">
         <img
           onClick={() => {
-             addToHistory(video, setHistory);
+            addToHistory(video, setHistory);
             navigate(`/singlevideopage/${_id}`);
           }}
           src={thumbnailUrl}
@@ -39,14 +57,14 @@ function CardHorizontal({ video }) {
         />
 
         <ul className="card--options">
-          <li onClick={ encodedToken ? () => addToWatchLater(video, setWatchLater) 
-          : ()=> navigate('/login',{ state:{from: location}})
-          }>
+          <li
+            onClick={() =>
+              addToWatchLater(video, setWatchLater, setInWatchLater)
+            }
+          >
             <MdOutlineWatchLater />
           </li>
-          <li onClick={ encodedToken ? () => addToLikeVideo(video, setLikeVideo, setIsLike)
-          : ()=> navigate('/login',{ state:{from: location}})
-          }>
+          <li onClick={() => addToLikeVideo(video, setLikeVideo, setIsLike)}>
             <BiLike />
           </li>
         </ul>

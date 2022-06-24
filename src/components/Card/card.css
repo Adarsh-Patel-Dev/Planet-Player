@@ -2,7 +2,7 @@
 
 .cards {
   align-content: baseline;
-  width: 92%;
+  width: 92vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -32,7 +32,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  width: 100%;
+  width: 80vw;
   margin: 2rem;
 }
 .card {

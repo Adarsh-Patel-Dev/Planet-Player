@@ -1,7 +1,7 @@
 import "./navbar.css";
 import { Toast } from "../../components/Toast/Toast";
 import { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { Avatar } from "../Avatar/Avatar";
 
 import {
@@ -27,7 +27,7 @@ const Navigation = () => {
   return (
     <nav className="nav-bar">
       <div className="nav--body">
-        <NavLink to="/">
+        <Link to="/">
           <div className="nav--header">
             <h2 class="nav--title">
               Pl
@@ -37,7 +37,7 @@ const Navigation = () => {
               ynet
             </h2>
           </div>
-        </NavLink>
+        </Link>
         {/* <div className="nav--search">
           <input
             type="text"

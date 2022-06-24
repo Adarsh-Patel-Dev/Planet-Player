@@ -3,6 +3,7 @@ import "../card.css";
 import "./singlevideo.css";
 import { PlaylistModal } from "../../PlaylistModal/PlaylistModal";
 import { useParams } from "react-router-dom";
+import { CardHorizontal } from "../CardHorizontal";
 import {
   MdOutlineWatchLater,
   MdWatchLater,
@@ -24,12 +25,21 @@ function SingleVideoCard() {
   const { videoId } = useParams();
 
   const { videoList } = useVideoListing();
-  const { toggleModal,inPlaylist, 
-    setInPlaylist } = usePlaylistContext();
-  const { isLike, setIsLike, addToLikeVideo, setLikeVideo, removeFromLikeVideo } =
-    useLikeVideoContext();
-  const { addToWatchLater, removeFromWatchLater, setWatchLater, inWatchLater,
-    setInWatchLater, } = useWatchLaterContext();
+  const { toggleModal, inPlaylist, setInPlaylist } = usePlaylistContext();
+  const {
+    isLike,
+    setIsLike,
+    addToLikeVideo,
+    setLikeVideo,
+    removeFromLikeVideo,
+  } = useLikeVideoContext();
+  const {
+    addToWatchLater,
+    removeFromWatchLater,
+    setWatchLater,
+    inWatchLater,
+    setInWatchLater,
+  } = useWatchLaterContext();
 
   const filteredVideo = videoList.filter((video) => video._id === videoId);
 
@@ -42,11 +52,23 @@ function SingleVideoCard() {
     duration,
     video_id,
     creater_img,
+    category,
     description,
     thumbnailUrl,
   } = filteredVideo[0];
 
+  console.log("category", category);
+
   const videourl = `https://www.youtube.com/embed/${video_id}`;
+
+  const filteredVideoByCategory = videoList.filter(
+    (video) => video.category === category
+  );
+  const suffleFilteredVideos = filteredVideoByCategory.sort(
+    () => Math.random() - 0.5
+  );
+
+  console.log(filteredVideoByCategory);
 
   return (
     <div>
@@ -75,35 +97,56 @@ function SingleVideoCard() {
               </div>
               <div className="actions-buttons">
                 <span>
-                   
-                 { !isLike ? <AiOutlineLike  onClick={() =>
-                      addToLikeVideo(filteredVideo[0], setLikeVideo, setIsLike)
-                    }/> : <AiFillLike  onClick={() => removeFromLikeVideo(_id, setLikeVideo, setIsLike)} />}
-                  
+                  {!isLike ? (
+                    <AiOutlineLike
+                      onClick={() =>
+                        addToLikeVideo(
+                          filteredVideo[0],
+                          setLikeVideo,
+                          setIsLike
+                        )
+                      }
+                    />
+                  ) : (
+                    <AiFillLike
+                      onClick={() =>
+                        removeFromLikeVideo(_id, setLikeVideo, setIsLike)
+                      }
+                    />
+                  )}
                 </span>
-              
+
                 <span>
-                {
-                  !inPlaylist ?
-                  <MdPlaylistAdd onClick={toggleModal} />
-                  :
-                  <MdPlaylistAddCheck onClick={toggleModal} />
-                }
+                  {!inPlaylist ? (
+                    <MdPlaylistAdd onClick={toggleModal} />
+                  ) : (
+                    <MdPlaylistAddCheck onClick={toggleModal} />
+                  )}
                 </span>
+
                 <PlaylistModal video={filteredVideo[0]} />
                 <span>
-
-                {
-                  !inWatchLater ? 
-                  <MdOutlineWatchLater
-                    onClick={() =>
-                      addToWatchLater(filteredVideo[0], setWatchLater, setInWatchLater)
-                    }
-                  /> : <MdWatchLater
-                    onClick={() =>
-                      removeFromWatchLater(_id, setWatchLater, setInWatchLater)
-                    } />
-                }
+                  {!inWatchLater ? (
+                    <MdOutlineWatchLater
+                      onClick={() =>
+                        addToWatchLater(
+                          filteredVideo[0],
+                          setWatchLater,
+                          setInWatchLater
+                        )
+                      }
+                    />
+                  ) : (
+                    <MdWatchLater
+                      onClick={() =>
+                        removeFromWatchLater(
+                          _id,
+                          setWatchLater,
+                          setInWatchLater
+                        )
+                      }
+                    />
+                  )}
                 </span>
               </div>
             </div>
@@ -119,6 +162,14 @@ function SingleVideoCard() {
                 <div className="card-channel-desc">{description}</div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="explore--section">
+          <h2>Related videos</h2>
+          <div className="card-container">
+            {suffleFilteredVideos?.map((video) => (
+              <CardHorizontal key={video._id} video={video} />
+            ))}
           </div>
         </div>
       </div>

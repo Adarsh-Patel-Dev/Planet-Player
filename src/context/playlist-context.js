@@ -56,6 +56,9 @@ const PlaylistProvider = ({ children }) => {
     }
   }
 
+  console.log("inplay",inPlaylist)
+
+
   async function removePlaylist(playlistId, setPlaylist) {
     try {
       const response = await axios({
@@ -100,7 +103,7 @@ const PlaylistProvider = ({ children }) => {
       });
 
       if (response.status === 201) {
-        setInPlaylist(!inPlaylist)
+       
         const updatedPlayList = playlist.map((playlist) => {
           if (playlist._id === response.data.playlist._id) {
             return { ...response.data.playlist };
@@ -108,6 +111,7 @@ const PlaylistProvider = ({ children }) => {
           return playlist;
         });
         setPlaylist(updatedPlayList);
+        setInPlaylist(true)
         Toast({
           type: "success",
           msg: `Video added to ${playlist[0].title.playlistName} playlist`,
@@ -128,7 +132,6 @@ const PlaylistProvider = ({ children }) => {
         headers: { authorization: localStorage.getItem("token") },
       });
       if (response.status === 200) {
-        setInPlaylist(!inPlaylist)
         setPlaylist((prev) =>
           prev.map((playlist) =>
             playlist._id === response.data.playlist._id

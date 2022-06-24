@@ -52,6 +52,10 @@
   transition: 1s;
 }
 
+.active {
+  background-color: var(--GREEN-50);
+}
+
 .icon:hover{
   color: red;
   cursor: pointer;
