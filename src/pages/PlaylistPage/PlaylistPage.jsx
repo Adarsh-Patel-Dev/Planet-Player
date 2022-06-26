@@ -3,13 +3,14 @@ import { AsideBar, PlaylistCard, PlaylistModal } from "../../components/";
 import { MdPlaylistPlay } from "react-icons/md";
 import { usePlaylistContext } from "../../context/playlist-context";
 
+
 function PlaylistPage() {
   const { playlist, setPlaylist, toggleModal } = usePlaylistContext();
 
   return (
     <div>
       <div className="body-section">
-        <AsideBar />
+        <AsideBar /> 
         <section className="cards">
           <h3 className="main-section-heading">
             <div className="main-section-heading-center">

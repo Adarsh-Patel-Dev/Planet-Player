@@ -115,3 +115,10 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--GREEN-50); 
 }
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 56%;
+  transform: translate(-50%, -50%);
+}
