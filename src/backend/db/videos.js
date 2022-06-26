@@ -286,12 +286,12 @@ export const videos = [
 
     videoUrl: "https://www.youtube.com/embed/xRUFIrA2tnY",
 
-    creator: "BUGATTI",
+    creator: "Bugatti",
 
     creater_img:
       "https://yt3.ggpht.com/ytc/AKedOLQ_AWaW4zpnPHUK9hdN0ym2jFktByVIQwy69OrFXg=s88-c-k-c0x00ffffff-no-rj",
 
-    category: "BUGATTI",
+    category: "Bugatti",
 
     video_id: "SMyD-Ax2Gkg",
 

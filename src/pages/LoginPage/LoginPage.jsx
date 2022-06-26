@@ -51,9 +51,7 @@ const Login = () => {
         
        
         <div className="checkbox-signup">
-          <input type="checkbox" className="signup" />
           <label className="signup-label">
-            I agree to the Terms of Service and Privacy Policy
           </label>
         </div>
 

@@ -1,14 +1,29 @@
 .aside-container {
   width: 8vh;
   min-width: 8rem;
-  /* overflow-y: auto;
+  overflow-y: auto;
   overflow-x: clip;
-  height: calc(100vh - 6.24rem); */
+  height: calc(100vh - 4em);
   display: flex;
   flex-direction: column;
   margin-top: 0px;
   color: white;
   background: linear-gradient(184.47deg, #151515 -1.58%, #010101 120.78%);
+  
+}
+
+.aside--container {
+  width: auto;
+  overflow-y: auto;
+  overflow-x: clip;
+  height: calc(100vh - 6.24rem);
+  display: flex;
+  flex-direction: column;
+  margin-top: 1px;
+  padding: 0rem 7rem 1rem 4rem;
+  color: white;
+  background: linear-gradient(184.47deg, #151515 -1.58%, #010101 120.78%);
+  min-width: 24rem;
 }
 
 .aside-list {

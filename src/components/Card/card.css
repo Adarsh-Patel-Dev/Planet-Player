@@ -1,6 +1,8 @@
 /*cards*/
 
 .cards {
+  height: calc(100vh - 4rem);
+  overflow: auto;
   align-content: baseline;
   width: 93vw;
   display: flex;

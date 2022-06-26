@@ -78,3 +78,24 @@
     height: 40rem;
 }
 
+.explore--section{
+        padding: 1.6rem;
+        margin: auto;
+        gap: 1rem;
+        display: flex;
+        flex-direction: column;
+}
+
+.explore--section h2{
+    color: var(--LIGHT-GREEN);
+    font-size: 2rem;
+}
+
+.explore--card--container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+

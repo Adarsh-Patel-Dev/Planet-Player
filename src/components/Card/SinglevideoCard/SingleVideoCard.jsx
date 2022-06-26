@@ -165,8 +165,8 @@ function SingleVideoCard() {
           </div>
         </div>
         <div className="explore--section">
-          <h2>Related videos</h2>
-          <div className="card-container">
+          <h2>More from {category} </h2>
+          <div className="explore--card--container">
             {suffleFilteredVideos?.map((video) => (
               <CardHorizontal key={video._id} video={video} />
             ))}
