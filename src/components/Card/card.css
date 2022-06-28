@@ -29,12 +29,13 @@
   padding: 2rem;
 }
 .card--container {
-  justify-content: flex-start;
-  background-color: var(--WHITE);
+  justify-content: center;
+  align-items: flex-start;
   display: flex;
   flex-wrap: wrap;
+  grid-gap: 2rem;
   gap: 2rem;
-  width: 80vw;
+  width: 86vw;
   margin: 2rem;
 }
 .card {

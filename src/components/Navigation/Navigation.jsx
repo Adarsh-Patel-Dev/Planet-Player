@@ -30,8 +30,7 @@ const Navigation = () => {
   const [hide, setHide] = useState(false);
   const { search, setSearch } = useVideoListing();
 
-  console.log(search)
-
+  const encodedToken = localStorage.getItem("token")
   useEffect(() => {
     if (logout) {
       window.location.reload();
@@ -121,18 +120,20 @@ const Navigation = () => {
             </h2>
           </Link>
         </div>
-        <div className="nav--search">
+        
+        { encodedToken &&
+          <div className="nav--search">
           <input
           onChange = {(e)=>setSearch(e.target.value)}
            value = {search}
             type="text"
-            placeholder="Search here"
+            placeholder="Search"
             className="nav--search--input"
           />
           {/* <button className="nav--search--btn">
             <MdSearch />
           </button> */}
-        </div>
+        </div>}
 
         <div className="nav--links">
           <ul className="nav--list">
