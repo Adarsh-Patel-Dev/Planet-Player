@@ -661,7 +661,7 @@ export const videos = [
   {
     _id: uuid(),
 
-    title: "he next chapter of progressive luxury: the Audi ",
+    title: "The next chapter of progressive luxury: the Audi ",
 
     description:
       "Experience high-class future. Designed from the inside out, this is a pioneer for first class comfort. An immersive sphere that allows you to work, relax, connect or indulge.",

@@ -8,7 +8,7 @@ import {
   MdPlaylistPlay,
   MdOutlineExplore,
   MdArrowBack,
-  MdOutlineMenu
+  MdOutlineMenu,
 } from "react-icons/md";
 import { Avatar } from "../Avatar/Avatar";
 
@@ -20,13 +20,17 @@ import {
   MdSearch,
   GoThreeBars,
 } from "../../Assets/Icons";
+import { useVideoListing } from "../../context/video-listing-context";
 
 const Navigation = () => {
   const token = localStorage.getItem("token");
   const [logout, setLogout] = useState(false);
   const location = useLocation();
   const [display, setDisplay] = useState(false);
-  const [ hide, setHide ] = useState(false)
+  const [hide, setHide] = useState(false);
+  const { search, setSearch } = useVideoListing();
+
+  console.log(search)
 
   useEffect(() => {
     if (logout) {
@@ -37,69 +41,77 @@ const Navigation = () => {
   return (
     <nav className="nav-bar">
       <div className="nav--body">
-        <span onClick={() => {
-          setHide(!hide)
-          setDisplay(true)}} className="burgar-icon">
+        <span
+          onClick={() => {
+            setHide(!hide);
+            setDisplay(true);
+          }}
+          className="burgar-icon"
+        >
           <MdOutlineMenu />
         </span>
-              
-          <div className="nav--header">
-          
-            <div
-              id="mySidenav"
-              class="sidenav"
-              style={{ display: display ? "block" : "none", transition: "0.5s" }}
+
+        <div className="nav--header">
+          <div
+            id="mySidenav"
+            class="sidenav"
+            style={{ display: display ? "block" : "none", transition: "0.5s" }}
+          >
+            <span
+              class="closebtn"
+              style={{ display: hide ? "inline" : "none" }}
             >
-                <span class="closebtn" style={{display: hide? "inline":"none"}}>
-                <MdArrowBack onClick={() =>{ 
-                setDisplay(false)
-                setHide(!hide)}} />
-              </span>
-              <ul className="aside-list">
-                <li className="aside-item">
-                  <NavLink to="/" className="aside-link flex-row">
-                    <AiOutlineHome />
-                    <span className="aside-text">Home</span>
-                  </NavLink>
-                </li>
+              <MdArrowBack
+                onClick={() => {
+                  setDisplay(false);
+                  setHide(!hide);
+                }}
+              />
+            </span>
+            <ul className="aside-list">
+              <li className="aside-item">
+                <NavLink to="/" className="aside-link flex-row">
+                  <AiOutlineHome />
+                  <span className="aside-text">Home</span>
+                </NavLink>
+              </li>
 
-                <li className="aside-item">
-                  <NavLink to="/videolisting" className="aside-link flex-row">
-                    <MdOutlineExplore />
-                    <span className="aside-text">Explore</span>
-                  </NavLink>
-                </li>
+              <li className="aside-item">
+                <NavLink to="/videolisting" className="aside-link flex-row">
+                  <MdOutlineExplore />
+                  <span className="aside-text">Explore</span>
+                </NavLink>
+              </li>
 
-                <li className="aside-item">
-                  <NavLink to="/history" className="aside-link flex-row">
-                    <AiOutlineHistory />
-                    <span className="aside-text">History</span>
-                  </NavLink>
-                </li>
+              <li className="aside-item">
+                <NavLink to="/history" className="aside-link flex-row">
+                  <AiOutlineHistory />
+                  <span className="aside-text">History</span>
+                </NavLink>
+              </li>
 
-                <li className="aside-item">
-                  <NavLink to="/playlist" className="aside-link flex-row">
-                    <MdPlaylistPlay />
-                    <span className="aside-text">Playlists</span>
-                  </NavLink>
-                </li>
-                <li className="aside-item">
-                  <NavLink to="/likedvideos" className="aside-link flex-row">
-                    <BiLike />
-                    <span className="aside-text">Favourite</span>
-                  </NavLink>
-                </li>
-                <li className="aside-item">
-                  <NavLink to="/watchlater" className="aside-link flex-row">
-                    <MdOutlineWatchLater />
-                    <span className="aside-text">WatchLater</span>
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
+              <li className="aside-item">
+                <NavLink to="/playlist" className="aside-link flex-row">
+                  <MdPlaylistPlay />
+                  <span className="aside-text">Playlists</span>
+                </NavLink>
+              </li>
+              <li className="aside-item">
+                <NavLink to="/likedvideos" className="aside-link flex-row">
+                  <BiLike />
+                  <span className="aside-text">Favourite</span>
+                </NavLink>
+              </li>
+              <li className="aside-item">
+                <NavLink to="/watchlater" className="aside-link flex-row">
+                  <MdOutlineWatchLater />
+                  <span className="aside-text">WatchLater</span>
+                </NavLink>
+              </li>
+            </ul>
+          </div>
 
-<Link to="/">
-
+          <Link to="/">
             <h2 class="nav--title">
               Pl
               <span className="logo-icon">
@@ -107,18 +119,20 @@ const Navigation = () => {
               </span>
               ynet
             </h2>
-        </Link>
-          </div>
-        {/* <div className="nav--search">
+          </Link>
+        </div>
+        <div className="nav--search">
           <input
+          onChange = {(e)=>setSearch(e.target.value)}
+           value = {search}
             type="text"
             placeholder="Search here"
             className="nav--search--input"
           />
-          <button className="nav--search--btn">
+          {/* <button className="nav--search--btn">
             <MdSearch />
-          </button>
-        </div> */}
+          </button> */}
+        </div>
 
         <div className="nav--links">
           <ul className="nav--list">

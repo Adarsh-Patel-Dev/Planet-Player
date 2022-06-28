@@ -29,7 +29,7 @@
   padding: 2rem;
 }
 .card--container {
-  justify-content: center;
+  justify-content: flex-start;
   background-color: var(--WHITE);
   display: flex;
   flex-wrap: wrap;
