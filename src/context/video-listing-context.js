@@ -7,8 +7,9 @@ const useVideoListing = () => useContext(VideoListingContext);
 const VideoListingProvider = ({ children }) => {
   const [videoList, setVideolist] = useState([]);
   const [category, setCategory] = useState([]);
-  const [ loading, setLoading ] = useState(true)
-  const [ search, setSearch ] = useState("")
+  const [ loading, setLoading ] = useState(true);
+  const [ search, setSearch ] = useState("");
+  const [ selectedCategory, setSelectedCategory ] = useState("All");
 
   async function getVideoData() {
     setTimeout(() => {
@@ -71,6 +72,8 @@ const VideoListingProvider = ({ children }) => {
         loading,
         search, 
         setSearch,
+        selectedCategory,
+        setSelectedCategory
       }}
     >
       {children}

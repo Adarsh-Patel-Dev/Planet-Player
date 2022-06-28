@@ -1,31 +1,31 @@
-import React from 'react'
-import "./categoryChips.css"
-import { useCategoryContext } from "../../context/category-context"
-import{ useVideoListing } from "../../context/video-listing-context"
-
+import {React, useState} from "react";
+import "./categoryChips.css";
+import { useCategoryContext } from "../../context/category-context";
+import { useVideoListing } from "../../context/video-listing-context";
 
 function CategoryChips() {
-    const { category } = useCategoryContext();
-    const { videoList } = useVideoListing();
+  const { category } = useCategoryContext();
+  const { videoList, selectedCategory, setSelectedCategory } = useVideoListing();
+  const [clas, setClas] = useState(false)
 
-
-    function filterVideoByCategory(category){
-        console.log("clicked");
-        console.log (videoList.filter(video=>video.category === category))
-    }
-    
+  // {`chips ${clas ? "active":""}`}
   return (
-    <div className='category-chips-container'>
-    <div className='chips'>All</div>
-   { category.map(category=>(
-
-    <div className='chips' key={category._id} onClick={()=>filterVideoByCategory(category.categoryName)}>
-     {category.categoryName}
+    <div className="category-chips-container">
+      <div className="chips" onClick={()=>setSelectedCategory("All")}>All</div>
+      {category.map((category) => (
+        <div
+          className="chips"
+          key={category._id}
+          onClick={() => {setSelectedCategory
+          (category.categoryName)
+          setClas(!clas)
+          }}
+        >
+          {category.categoryName}
+        </div>
+      ))}
     </div>
-   ))}
-     <hr/>
-    </div>
-  )
+  );
 }
 
-export default CategoryChips
+export default CategoryChips;
