@@ -552,4 +552,144 @@ export const videos = [
 
     duration: "2:00",
   },
+
+  {
+    _id: uuid(),
+
+    title: "Audi - Future is an Attitude",
+
+    description:
+      "Trailer of the 2019 #Audi #R8 #Coupé V10 performance #quattro: the sports #car comes with an even sharper #exterior #design. Catch a first glimpse of the high-performance model!",
+
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/GGRi85kK4n4/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAzykaO6OKffQrqN3VYqnv3HnpObQ",
+
+    videoUrl: "https://www.youtube.com/embed/xRUFIrA2tnY",
+
+    creator: "Audi",
+
+    creater_img:
+      "https://yt3.ggpht.com/ytc/AKedOLSZt_sv7Gt6Rt3qm2ZYRhUouxgoFUExAieMDb4V=s88-c-k-c0x00ffffff-no-rj",
+
+    category: "Audi",
+
+    video_id: "GGRi85kK4n4",
+
+    image: "/",
+
+    watchLater: false,
+
+    isLiked: false,
+
+    views: "110,143 views",
+
+    old: "Feb 28, 2019",
+
+    duration: "1:19",
+  },
+
+  {
+    _id: uuid(),
+
+    title: "Audi - Future is an Attitude",
+
+    description:
+      "We all look at the same world. But we all look at it in a different way.Sometimes, you need to change your perspective.At Audi, we reimagine mobility.",
+
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/pWaHZ2oRE7s/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBVjBlamXUtY-I_Gk8YzNfy35R9jg",
+
+    videoUrl: "https://www.youtube.com/embed/xRUFIrA2tnY",
+
+    creator: "Audi",
+
+    creater_img:
+      "https://yt3.ggpht.com/ytc/AKedOLSZt_sv7Gt6Rt3qm2ZYRhUouxgoFUExAieMDb4V=s88-c-k-c0x00ffffff-no-rj",
+
+    category: "Audi",
+
+    video_id: "pWaHZ2oRE7s",
+
+    image: "/",
+
+    watchLater: false,
+
+    isLiked: false,
+
+    views: "14,495,920 views",
+
+    old: "Oct 1, 2020",
+
+    duration: "1:52",
+  },
+
+  {
+    _id: uuid(),
+
+    title: "Audi's Future Supercar!",
+
+    description:
+      "This is the Audi AI-RACE, formally called the PB-18 because it was released at Pebble Beach last year. I fly in to Germany to take a look at where Audi pictures the brand to be in the next few years.",
+
+    thumbnailUrl:
+      "	https://i.ytimg.com/vi/0irtVnabSJA/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLD0ML0aBm1pFVeW6_pqx-cVDghHSQ",
+
+    videoUrl: "https://www.youtube.com/embed/xRUFIrA2tnY",
+
+    creator: "Audi",
+
+    creater_img:
+      "https://yt3.ggpht.com/ytc/AKedOLSZt_sv7Gt6Rt3qm2ZYRhUouxgoFUExAieMDb4V=s88-c-k-c0x00ffffff-no-rj",
+
+    category: "Audi",
+
+    video_id: "0irtVnabSJA",
+
+    image: "/",
+
+    watchLater: false,
+
+    isLiked: false,
+
+    views: "4,101,937 views",
+
+    old: "Nov 2, 2019",
+
+    duration: "10:01",
+  },
+
+  {
+    _id: uuid(),
+
+    title: "he next chapter of progressive luxury: the Audi ",
+
+    description:
+      "Experience high-class future. Designed from the inside out, this is a pioneer for first class comfort. An immersive sphere that allows you to work, relax, connect or indulge.",
+
+    thumbnailUrl:
+      "https://i.ytimg.com/vi/U9rUTPhLwy0/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLBmQ6srfKTfS3o4DFkpevl5vlDx3A",
+
+    videoUrl: "https://www.youtube.com/embed/xRUFIrA2tnY",
+
+    creator: "Audi",
+
+    creater_img:
+      "https://yt3.ggpht.com/ytc/AKedOLSZt_sv7Gt6Rt3qm2ZYRhUouxgoFUExAieMDb4V=s88-c-k-c0x00ffffff-no-rj",
+
+    category: "Audi",
+
+    video_id: "U9rUTPhLwy0",
+
+    image: "/",
+
+    watchLater: false,
+
+    isLiked: false,
+
+    views: "353,766 views",
+
+    old: "Sep 14, 2021",
+
+    duration: "4:28",
+  },
 ];

@@ -33,7 +33,7 @@
   background-color: var(--WHITE);
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 2rem;
   width: 80vw;
   margin: 2rem;
 }
@@ -112,6 +112,8 @@
 .channel-logo {
   border-radius: 50%;
   box-shadow: 0px 0px 15px var(--BOX-SHADOW);
+  display: grid;
+  place-content: center;
 }
 
 .logo-img {

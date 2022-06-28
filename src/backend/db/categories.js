@@ -35,7 +35,7 @@ export const categories = [
   },
   {
     _id: uuid(),
-    categoryName: "Buggati",
+    categoryName: "Bugatti",
     url:"https://youtu.be/rEsMlbdC1r8",
     iframe: "",
     image: "https://www.carlogos.org/logo/Bugatti-logo-1024x768.png",
@@ -51,14 +51,6 @@ export const categories = [
     description:
       "In 1932, the four companies Audi, DKW, Horch and Wanderer joined together to form Auto Union AG, which would later become AUDI AG. And the company needed a new logo. The four interlocking rings were born.Audi AG, also simply known as Audi, is a German automobile manufacturer that designs, engineers, produces, markets and distributes luxury vehicles.",
   },
-  {
-    _id: uuid(),
-    categoryName: "Jaguar",
-    url:"https://youtu.be/rEsMlbdC1r8",
-    iframe: "",
-    image: "https://www.carlogos.org/logo/Jaguar-logo-2012-1920x1080.png",
-    description:
-      "IJaguar is a British car manufacturer founded in 1922, is now a division of Jaguar Land Rover owned by Tata Motors, which purchased it from Ford in 2008.Because Jaguar occupies both the performance and luxury markets, its competition is particularly diverse. It includes Porsche, Mercedes-Benz, BMW, Lexus, Cadillac, Infiniti, as well as Lincoln in the U.S..",
-  },
+  
   
 ];
