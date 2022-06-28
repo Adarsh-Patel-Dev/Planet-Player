@@ -311,22 +311,22 @@ export const videos = [
   {
     _id: uuid(),
 
-    title: "Aventador LP780-4 Ultimae: It Takes Time To Become Timeless",
+    title: "World Premiere: BUGATTI Bolide",
 
     description:
-      "Aventador LP 780-4 Ultimae marks a new milestone in our history. A feat in automotive engineering, our newest Super Sports Car brings racing to an unprecedented level.",
+      "Our 21st century interpretation of a racing thoroughbred! What if we developed an extreme, track-focused only hyper sports car? With the technological concept of the BUGATTI Bolide, we are now providing the answer",
 
     thumbnailUrl:
-      "https://i.ytimg.com/vi/1gu1noIun8U/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLAUAGWkVeaaaxSDdyaxLp-azXpjYg",
+      "https://i.ytimg.com/vi/HRhukQfxbDc/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLB_WTkptZgapvNxIqRCBf9Q6Q_DtQ",
 
     videoUrl: "https://www.youtube.com/embed/xRUFIrA2tnY",
 
-    creator: "Lamborghini",
+    creator: "Bugatti",
 
     creater_img:
-      "https://yt3.ggpht.com/ytc/AKedOLSASv4CCrVU31tCD0SQUb9UYkgYPddiB7tpCM4QGrA=s176-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/ytc/AKedOLQ_AWaW4zpnPHUK9hdN0ym2jFktByVIQwy69OrFXg=s88-c-k-c0x00ffffff-no-rj",
 
-    category: "Lamborghini",
+    category: "Bugatti",
 
     video_id: "C74Hq3HVD0Y",
 
@@ -336,11 +336,11 @@ export const videos = [
 
     isLiked: false,
 
-    views: "7,931,849 views",
+    views: "1,521,721 views",
 
-    old: "Jan 23, 2019",
+    old: "Jan 29, 2021",
 
-    duration: "1:25",
+    duration: "13:32",
   },
 
   {
