@@ -87,8 +87,11 @@
   color: var(--GRAY-80);
 }
 
-.remove-btn{
+.remove-btn {
   font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .small{
@@ -97,8 +100,9 @@
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  border-radius: 2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
 }
 
 /* Track */

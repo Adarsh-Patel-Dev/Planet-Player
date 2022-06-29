@@ -36,7 +36,15 @@ const WatchLaterProvider = ({ children }) => {
       if (response.status === 201) {
 
         setInWatchLater(!inWatchLater)
-        setWatchLater(response.data.watchlater);
+        // setWatchLater(response.data.watchlater);
+        setWatchLater(response.data.watchlater.map(obj=>{
+          if(!obj.watchLater){
+            return {...obj, watchLater: true }
+          }
+          return obj;
+        }));
+        console.log(watchLater,"added")
+
         Toast({ type: "success", msg: "Video added to watchlater" });
       }
     } catch (error) {
@@ -54,7 +62,14 @@ const WatchLaterProvider = ({ children }) => {
       });
       if (response.status === 200) {
         setInWatchLater(!inWatchLater)
-        setWatchLater(response.data.watchlater);
+        // setWatchLater(response.data.watchlater);
+        setWatchLater(response.data.watchlater.map(obj=>{
+          if(!obj.watchLater){
+            return {...obj, watchLater: false }
+          }
+          return obj;
+        }));
+        console.log(watchLater,"delete")
         Toast({ type: "info", msg: "Video removed from watchlater" });
       }
     } catch (error) {

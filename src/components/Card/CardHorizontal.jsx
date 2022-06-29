@@ -25,6 +25,7 @@ function CardHorizontal({ video }) {
     videos,
     description,
     video_id,
+    watchLater,
     old,
     duration,
     views,
@@ -57,6 +58,10 @@ function CardHorizontal({ video }) {
         />
 
         <ul className="card--options">
+
+        {
+          !watchLater
+          ?
           <li
             onClick={() =>
               addToWatchLater(video, setWatchLater, setInWatchLater)
@@ -64,6 +69,15 @@ function CardHorizontal({ video }) {
           >
             <MdOutlineWatchLater />
           </li>
+          : <li
+            onClick={() =>
+              removeFromWatchLater(_id, setWatchLater, setInWatchLater)
+            }
+          >
+            <MdWatchLater />
+          </li>
+
+        }
           <li onClick={() => addToLikeVideo(video, setLikeVideo, setIsLike)}>
             <BiLike />
           </li>
