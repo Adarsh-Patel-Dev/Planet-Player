@@ -9,6 +9,7 @@ import {
   MdOutlineExplore,
   MdArrowBack,
   MdOutlineMenu,
+  MdClear,
 } from "react-icons/md";
 import { Avatar } from "../Avatar/Avatar";
 
@@ -130,6 +131,10 @@ const Navigation = () => {
             placeholder="Search"
             className="nav--search--input"
           />
+          <MdClear  className="clear-icon"
+            style={{display:!search.length?"none":"block"}}
+            onClick={()=>setSearch("")}  
+            />
           {/* <button className="nav--search--btn">
             <MdSearch />
           </button> */}

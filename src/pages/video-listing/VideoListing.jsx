@@ -11,8 +11,12 @@ function VideoListing() {
 
   const searchResultVideo = suffleVideos.filter(
     (video) =>
+      video.title.includes(search) ||
       video.title.toLowerCase().includes(search) ||
-      video.creator.toLowerCase().includes(search)
+      video.title.toUpperCase().includes(search) ||
+      video.creator.includes(search) ||
+      video.creator.toLowerCase().includes(search) ||
+      video.creator.toUpperCase().includes(search)
   );
 
   const finalfilteredVideos =
