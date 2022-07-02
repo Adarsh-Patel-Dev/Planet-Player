@@ -25,7 +25,7 @@ function CardHorizontal({ video }) {
     videos,
     description,
     video_id,
-    watchLater,
+    // watchLater,
     old,
     duration,
     views,
@@ -35,9 +35,10 @@ function CardHorizontal({ video }) {
   const encodedToken = localStorage.getItem("token");
 
   const { addToHistory, setHistory } = useHistoryContext();
-  const { setIsLike, isLike, addToLikeVideo, setLikeVideo } =
+  const { likedVideo, setIsLike, isLike, addToLikeVideo, setLikeVideo } =
     useLikeVideoContext();
   const {
+    watchLater,
     addToWatchLater,
     removeFromWatchLater,
     setWatchLater,
@@ -60,7 +61,7 @@ function CardHorizontal({ video }) {
         <ul className="card--options">
 
         {
-          !watchLater
+          !watchLater.find(video=>video._id === _id)
           ?
           <li
             onClick={() =>
@@ -78,9 +79,15 @@ function CardHorizontal({ video }) {
           </li>
 
         }
-          <li onClick={() => addToLikeVideo(video, setLikeVideo, setIsLike)}>
-            <BiLike />
-          </li>
+          { 
+            !likedVideo.find(video=>video._id === _id) ?
+            <li onClick={() => addToLikeVideo(video, setLikeVideo, setIsLike)}>
+            <AiOutlineLike />
+          </li> : 
+          <li onClick={() => removeFromLikeVideo(_id, setLikeVideo, setIsLike)}>
+            <AiFillLike />
+            </li>
+          }
         </ul>
 
         <span className="duration-label">{duration}</span>

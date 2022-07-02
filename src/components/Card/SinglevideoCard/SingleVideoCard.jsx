@@ -2,6 +2,7 @@ import React from "react";
 import "../card.css";
 import "./singlevideo.css";
 import { PlaylistModal } from "../../PlaylistModal/PlaylistModal";
+import { AsideBar } from "../../Asidebar/Asidebar"
 import { useParams } from "react-router-dom";
 import { CardHorizontal } from "../CardHorizontal";
 import {
@@ -57,18 +58,12 @@ function SingleVideoCard() {
     thumbnailUrl,
   } = filteredVideo[0];
 
-  console.log("category", category);
 
   const videourl = `https://www.youtube.com/embed/${video_id}`;
 
   const filteredVideoByCategory = videoList.filter(
     (video) => video.category === category
   );
-  const suffleFilteredVideos = filteredVideoByCategory.sort(
-    () => Math.random() - 0.5
-  );
-
-  console.log(filteredVideoByCategory);
 
   return (
     <div>
@@ -167,7 +162,7 @@ function SingleVideoCard() {
         <div className="explore--section">
           <h2>More from {category} </h2>
           <div className="explore--card--container">
-            {suffleFilteredVideos?.map((video) => (
+            {filteredVideoByCategory?.map((video) => (
               <CardHorizontal key={video._id} video={video} />
             ))}
           </div>
