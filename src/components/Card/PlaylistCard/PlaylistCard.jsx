@@ -19,12 +19,12 @@ function PlaylistCard({ playlist }) {
   const img =
     videos.length > 0
       ? videos[0].thumbnailUrl
-      : "https://www.luxuryandexpensive.com/pic/50010_1.jpg";
+      : "https://i.ytimg.com/vi/AjWfY7SnMBI/hq720.jpg?sqp=-…AFwAcABBg==&rs=AOn4CLDBLqquvLqqTiEbGsVhoxOqMiBIgA";
 
   const navigate = useNavigate();
 
   return (
-    <div className="card">
+    <div className="card thin--border">
       <div className="card--image">
         <div className="card-overlay">
           <p>{videos.length}</p>
@@ -38,6 +38,9 @@ function PlaylistCard({ playlist }) {
           className="img-fluid"
           alt={playlistName}
         />
+        {
+          videos.length === 0 ? <p className="empty-playlist">Empty <br/>Playlist</p> : ""
+        }
       </div>
 
       <div className="card--body">

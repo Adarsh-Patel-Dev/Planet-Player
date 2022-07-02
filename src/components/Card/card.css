@@ -29,8 +29,8 @@
   padding: 2rem;
 }
 .card--container {
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: baseline;
   display: flex;
   flex-wrap: wrap;
   grid-gap: 2rem;
