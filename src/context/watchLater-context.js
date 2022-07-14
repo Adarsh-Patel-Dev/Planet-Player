@@ -8,6 +8,7 @@ const useWatchLaterContext = () => useContext(WatchLaterContext);
 
 const WatchLaterProvider = ({ children }) => {
   const [watchLater, setWatchLater] = useState([]);
+  const [ inWatchLater, setInWatchLater] = useState(false);
 
   async function getWatchLater() {
     try {
@@ -24,7 +25,7 @@ const WatchLaterProvider = ({ children }) => {
     }
   }
 
-  async function addToWatchLater(video, setWatchLater) {
+  async function addToWatchLater(video, setWatchLater,setInWatchLater) {
     try {
       const response = await axios({
         method: "POST",
@@ -33,7 +34,17 @@ const WatchLaterProvider = ({ children }) => {
         data: { video: video },
       });
       if (response.status === 201) {
-        setWatchLater(response.data.watchlater);
+
+        setInWatchLater(!inWatchLater)
+        // setWatchLater(response.data.watchlater);
+        setWatchLater(response.data.watchlater.map(obj=>{
+          if(!obj.watchLater){
+            return {...obj, watchLater: true }
+          }
+          return obj;
+        }));
+        console.log(watchLater,"added")
+
         Toast({ type: "success", msg: "Video added to watchlater" });
       }
     } catch (error) {
@@ -42,7 +53,7 @@ const WatchLaterProvider = ({ children }) => {
     }
   }
 
-  async function removeFromWatchLater(videoId, setWatchLater) {
+  async function removeFromWatchLater(videoId, setWatchLater,setInWatchLater  ) {
     try {
       const response = await axios({
         method: "DELETE",
@@ -50,7 +61,15 @@ const WatchLaterProvider = ({ children }) => {
         headers: { authorization: localStorage.getItem("token") },
       });
       if (response.status === 200) {
-        setWatchLater(response.data.watchlater);
+        setInWatchLater(!inWatchLater)
+        // setWatchLater(response.data.watchlater);
+        setWatchLater(response.data.watchlater.map(obj=>{
+          if(!obj.watchLater){
+            return {...obj, watchLater: false }
+          }
+          return obj;
+        }));
+        console.log(watchLater,"delete")
         Toast({ type: "info", msg: "Video removed from watchlater" });
       }
     } catch (error) {
@@ -68,6 +87,8 @@ const WatchLaterProvider = ({ children }) => {
       value={{
         setWatchLater,
         watchLater,
+        inWatchLater,
+        setInWatchLater,
         addToWatchLater,
         removeFromWatchLater,
         clearWatchlater,

@@ -78,22 +78,17 @@ const Signup = () => {
           placeholder="Re Enter Password"
           required
         />
-        {/* {confirmPassword !== "" && password === confirmPassword ? (
-          <span>Password are matched ✅</span>
+        {confirmPassword !== "" && password === confirmPassword ? (
+          <span>Passwords are matched ✅</span>
         ) : (
-          confirmPassword !== "" &&  (<span>Password mis-matched❗</span>)
-        )} */}
+          confirmPassword !== "" &&  (<span>Passwords mis-matched❗</span>)
+        )} 
 
-        {/* {
-            password === confirmPassword ? (<p>mismatched</p>) : (<p>matched</p>)
-        } */}
-       
         <div className="checkbox-signup">
-          <input type="checkbox" className="signup" />
           <label className="signup-label">
-            I agree to the Terms of Service and Privacy Policy
           </label>
         </div>
+
 
         <button
           className="btn-login"

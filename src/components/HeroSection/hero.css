@@ -1,8 +1,5 @@
 .hero-section{
-
     background-image: linear-gradient(to right, #000000, #020102, #030304, #040406, #040608, #040709, #040809, #040909, #040909, #040909, #040909, #040909);
-
-    /* background-image: linear-gradient(to right, #000000, #0b0404, #130903, #150f03, #141505, #1e2612, #24381c, #264b29, #3f7338, #5e9d45, #84c94f, #b1f556); */
     width: auto;
     display: flex;
     justify-content: space-around;
@@ -12,14 +9,23 @@
 }
 
 .hero-text {
-    width: 60%;
+    width: 45%;
     font-family: inherit;
     font-style: normal;
     font-weight: 800;
     font-size: 5rem;
     line-height: 6rem;
     color: var(--WHITE);
+
+    position: relative;
+    animation: mymove2 2s ;
+    animation-timing-function: ease;
 }
+
+@keyframes mymove2 {
+    from {top: -300px;}
+    to {top: 0px;}
+  }
 
 .hero-section-para {
     width: 780px;
@@ -33,15 +39,24 @@
 }
 
 .img-hero{
-    z-index: -1;
+    z-index: 1;
     max-width: 50%;
     padding: 1rem;
     margin-left: -15rem;
     margin-top: 3rem;
+
+    position: relative;
+    animation: mymove 1s ;
+    animation-timing-function: ease;
 }
 
-img{
+@keyframes mymove {
+    from {left: 300px;}
+    to {left: 0px;}
+  }
 
+img{
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }
@@ -52,8 +67,7 @@ img{
     display: flex;
    gap: 2rem;
     align-items: center;
-    /* background-color: rgb(242,242,244); */
-    padding: 5rem 1rem;
+    padding: 5rem 0;
 }
 
 .primary-cta {

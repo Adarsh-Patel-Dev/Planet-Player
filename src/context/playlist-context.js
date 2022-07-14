@@ -7,6 +7,7 @@ const usePlaylistContext = () => useContext(PlaylistContext);
 
 const PlaylistProvider = ({ children }) => {
   const [playlist, setPlaylist] = useState([]);
+  const [inPlaylist, setInPlaylist] = useState(false);
 
   const [display, setDisplay] = useState("none");
 
@@ -55,14 +56,17 @@ const PlaylistProvider = ({ children }) => {
     }
   }
 
+  console.log("inplay",inPlaylist)
+
+
   async function removePlaylist(playlistId, setPlaylist) {
     try {
-      const response = axios({
+      const response = await axios({
         method: "DELETE",
         url: `/api/user/playlists/${playlistId}`,
         headers: { authorization: localStorage.getItem("token") },
       });
-      if (response.status === 200) {
+      if (true) {
         setPlaylist(response.data.playlists);
         Toast({ type: "info", msg: `Playlist removed ` });
       }
@@ -89,7 +93,7 @@ const PlaylistProvider = ({ children }) => {
     }
   }
 
-  async function addToPlaylist(cardData, playlistId, setPlaylist, toggle) {
+  async function addToPlaylist(cardData, playlistId, setPlaylist, toggle,setInPlaylist) {
     try {
       const response = await axios({
         method: "POST",
@@ -99,6 +103,7 @@ const PlaylistProvider = ({ children }) => {
       });
 
       if (response.status === 201) {
+       
         const updatedPlayList = playlist.map((playlist) => {
           if (playlist._id === response.data.playlist._id) {
             return { ...response.data.playlist };
@@ -106,6 +111,7 @@ const PlaylistProvider = ({ children }) => {
           return playlist;
         });
         setPlaylist(updatedPlayList);
+        setInPlaylist(true)
         Toast({
           type: "success",
           msg: `Video added to ${playlist[0].title.playlistName} playlist`,
@@ -118,7 +124,7 @@ const PlaylistProvider = ({ children }) => {
     }
   }
 
-  async function removeFromPlaylist(playlistId, videoId, setPlaylist) {
+  async function removeFromPlaylist(playlistId, videoId, setPlaylist, setInPlaylist) {
     try {
       const response = await axios({
         method: "DELETE",
@@ -156,6 +162,8 @@ const PlaylistProvider = ({ children }) => {
     getPlaylists,
     removeFromPlaylist,
     addToPlaylist,
+    inPlaylist, 
+    setInPlaylist
   };
   return (
     <PlaylistContext.Provider value={value}>

@@ -46,20 +46,35 @@
   font-size: 1.2rem;
   margin: 1rem;
 }
+
+.icon{
+  cursor: pointer;
+  transition: 1s;
+}
+
+.active {
+  background-color: var(--GREEN-50);
+}
+
+.icon:hover{
+  color: red;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+
 /***main-section-of-all-pages***/
-
-
 
 .main-section-heading {
   width: 100%;
   justify-content: space-between;
   display: flex;
-  position: relative;
-  margin: 0 auto;
+  margin: 2rem;
   font-size: 2.5rem;
   color: var(--GRAY-80);
   align-items: center;
-  gap: 8px;
+
 }
 
 .main-section-heading-center{
@@ -72,11 +87,42 @@
   color: var(--GRAY-80);
 }
 
-.remove-btn{
+.remove-btn {
   font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 .small{
   font-size: 1.5rem;
   font-weight: 400;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  border-radius: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--GREEN-50); 
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 56%;
+  transform: translate(-50%, -50%);
 }

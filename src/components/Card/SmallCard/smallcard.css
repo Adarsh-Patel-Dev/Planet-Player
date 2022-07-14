@@ -1,7 +1,7 @@
 
 
 .card-small {
-    width: 90%;
+    width: 70%;
     height: auto;
     background-color: var(--WHITE);
     color: var(--BLACK-80);
@@ -70,7 +70,7 @@
     grid-gap: 1rem;
     grid-gap: 1rem;
     gap: 1rem;
-    margin: 0 -0.5rem;
+    margin: 0 1.5rem;
     padding: 10px;
     justify-content: flex-start;
     display: flex;

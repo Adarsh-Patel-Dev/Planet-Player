@@ -2,10 +2,14 @@ import React from "react";
 import "../card.css";
 import "./singlevideo.css";
 import { PlaylistModal } from "../../PlaylistModal/PlaylistModal";
+import { AsideBar } from "../../Asidebar/Asidebar"
 import { useParams } from "react-router-dom";
+import { CardHorizontal } from "../CardHorizontal";
 import {
   MdOutlineWatchLater,
+  MdWatchLater,
   MdPlaylistAdd,
+  MdPlaylistAddCheck,
   AiFillDislike,
   AiFillLike,
   AiOutlineDislike,
@@ -22,10 +26,21 @@ function SingleVideoCard() {
   const { videoId } = useParams();
 
   const { videoList } = useVideoListing();
-  const { toggleModal } = usePlaylistContext();
-  const { isLike, setIsLike, addToLikeVideo, setLikeVideo, removeFromLikeVideo } =
-    useLikeVideoContext();
-  const { addToWatchLater, setWatchLater } = useWatchLaterContext();
+  const { toggleModal, inPlaylist, setInPlaylist } = usePlaylistContext();
+  const {
+    isLike,
+    setIsLike,
+    addToLikeVideo,
+    setLikeVideo,
+    removeFromLikeVideo,
+  } = useLikeVideoContext();
+  const {
+    addToWatchLater,
+    removeFromWatchLater,
+    setWatchLater,
+    inWatchLater,
+    setInWatchLater,
+  } = useWatchLaterContext();
 
   const filteredVideo = videoList.filter((video) => video._id === videoId);
 
@@ -38,11 +53,17 @@ function SingleVideoCard() {
     duration,
     video_id,
     creater_img,
+    category,
     description,
     thumbnailUrl,
   } = filteredVideo[0];
 
+
   const videourl = `https://www.youtube.com/embed/${video_id}`;
+
+  const filteredVideoByCategory = videoList.filter(
+    (video) => video.category === category
+  );
 
   return (
     <div>
@@ -71,23 +92,56 @@ function SingleVideoCard() {
               </div>
               <div className="actions-buttons">
                 <span>
-                   
-                 { !isLike ? <AiOutlineLike  onClick={() =>
-                      addToLikeVideo(filteredVideo[0], setLikeVideo, setIsLike)
-                    }/> : <AiFillLike  onClick={() => removeFromLikeVideo(_id, setLikeVideo, setIsLike)} />}
-                  
+                  {!isLike ? (
+                    <AiOutlineLike
+                      onClick={() =>
+                        addToLikeVideo(
+                          filteredVideo[0],
+                          setLikeVideo,
+                          setIsLike
+                        )
+                      }
+                    />
+                  ) : (
+                    <AiFillLike
+                      onClick={() =>
+                        removeFromLikeVideo(_id, setLikeVideo, setIsLike)
+                      }
+                    />
+                  )}
                 </span>
-              
+
                 <span>
-                  <MdPlaylistAdd onClick={toggleModal} />
+                  {!inPlaylist ? (
+                    <MdPlaylistAdd onClick={toggleModal} />
+                  ) : (
+                    <MdPlaylistAddCheck onClick={toggleModal} />
+                  )}
                 </span>
+
                 <PlaylistModal video={filteredVideo[0]} />
                 <span>
-                  <MdOutlineWatchLater
-                    onClick={() =>
-                      addToWatchLater(filteredVideo[0], setWatchLater)
-                    }
-                  />
+                  {!inWatchLater ? (
+                    <MdOutlineWatchLater
+                      onClick={() =>
+                        addToWatchLater(
+                          filteredVideo[0],
+                          setWatchLater,
+                          setInWatchLater
+                        )
+                      }
+                    />
+                  ) : (
+                    <MdWatchLater
+                      onClick={() =>
+                        removeFromWatchLater(
+                          _id,
+                          setWatchLater,
+                          setInWatchLater
+                        )
+                      }
+                    />
+                  )}
                 </span>
               </div>
             </div>
@@ -103,6 +157,14 @@ function SingleVideoCard() {
                 <div className="card-channel-desc">{description}</div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="explore--section">
+          <h2>More from {category} </h2>
+          <div className="explore--card--container">
+            {filteredVideoByCategory?.map((video) => (
+              <CardHorizontal key={video._id} video={video} />
+            ))}
           </div>
         </div>
       </div>

@@ -16,6 +16,8 @@ function PlaylistModal({ video }) {
     addPlaylists,
     removeFromPlaylist,
     addToPlaylist,
+    inPlaylist, 
+    setInPlaylist
   } = usePlaylistContext();
   return (
     <div style={{ display: display }} className="modal--container">
@@ -34,6 +36,7 @@ function PlaylistModal({ video }) {
                             video,
                             playlist._id,
                             setPlaylist,
+                            setInPlaylist,
                             toggleModal
                           )}
                  key={playlist._id}>
@@ -45,10 +48,12 @@ function PlaylistModal({ video }) {
                             video,
                             playlist._id,
                             setPlaylist,
+                            setInPlaylist,
                             toggleModal
                           )
                         : removeFromPlaylist(
                             playlist._id,
+                            setInPlaylist,
                             video._id,
                             setPlaylist
                           )

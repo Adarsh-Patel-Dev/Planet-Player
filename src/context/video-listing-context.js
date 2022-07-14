@@ -7,11 +7,18 @@ const useVideoListing = () => useContext(VideoListingContext);
 const VideoListingProvider = ({ children }) => {
   const [videoList, setVideolist] = useState([]);
   const [category, setCategory] = useState([]);
+  const [ loading, setLoading ] = useState(true);
+  const [ search, setSearch ] = useState("");
+  const [ selectedCategory, setSelectedCategory ] = useState("All");
 
   async function getVideoData() {
+    setTimeout(() => {
+      setLoading(false)
+    }, 2000);
     try {
       const response = await axios.get("/api/videos");
       if (response.status === 200) {
+        // setLoading(false)
         setVideolist(response.data.videos);
       }
     } catch (error) {
@@ -62,6 +69,11 @@ const VideoListingProvider = ({ children }) => {
         setCategory,
         getAllCategory,
         getCategory,
+        loading,
+        search, 
+        setSearch,
+        selectedCategory,
+        setSelectedCategory
       }}
     >
       {children}

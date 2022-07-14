@@ -33,7 +33,7 @@
 }
 
 .btn--primary {
-    background-color: var(--GREEN);
+    background-color: var(--LIGHT-GREEN);
     transition: 0.5s;
 }
 

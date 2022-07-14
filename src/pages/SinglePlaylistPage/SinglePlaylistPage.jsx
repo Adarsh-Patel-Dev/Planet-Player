@@ -1,5 +1,5 @@
 import "../LandingPage/landingpage.css";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { AsideBar, SmallCard } from "../../components/";
 import { MdPlaylistPlay } from "react-icons/md";
 import { usePlaylistContext } from "../../context/";
@@ -37,20 +37,34 @@ function SinglePlaylistPage() {
               {playlistName} ({videosInPlaylist.length})
             </div>
             <div>
-              {/* <button onClick={()=>removePlaylist(_id, setPlaylist )} className="btn btn-primary"> */}
+              {/* <button onClick={()=>removePlaylist(_id, setPlaylist )} className="btn btn-primary">Clear All</button> */}
             </div>
           </h3>
-          <div className="card--container">
-            {videosInPlaylist?.map((video) => (
-              <SmallCard
-                key={video._id}
-                video={video}
-                removeFunction={() =>
-                  removeFromPlaylist(_id, video._id, setPlaylist)
-                }
-              />
-            ))}
-          </div>
+
+          {videosInPlaylist.length > 0 ? (
+            <div className="card--container">
+              {videosInPlaylist?.map((video) => (
+                <SmallCard
+                  key={video._id}
+                  video={video}
+                  removeFunction={() =>
+                    removeFromPlaylist(_id, video._id, setPlaylist)
+                  }
+                />
+              ))}
+            </div>
+          ) : (
+            <section className="error-section">
+              <div className="error-text">
+                <p className="error-details">
+                  You don't have any videos in <b>{playlistName}</b> playlist.
+                </p>
+                <Link to="/videolisting">
+                  <button className="btn-solid nav--link">Add videos</button>
+                </Link>
+              </div>
+            </section>
+          )}
         </section>
       </div>
     </div>

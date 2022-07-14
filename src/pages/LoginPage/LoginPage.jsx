@@ -18,7 +18,7 @@ const Login = () => {
     <div className="main">
       <img
         className="bg-img"
-        src="https://wallpapercave.com/wp/wp10301811.jpg"
+        src="https://cutewallpaper.org/21/bugatti-chiron-wallpaper-4k/4k-Bugatti-Chiron-Sport-HD-Cars-4k-Wallpapers-Images-.jpg"
         alt=""
       />
 
@@ -51,9 +51,7 @@ const Login = () => {
         
        
         <div className="checkbox-signup">
-          <input type="checkbox" className="signup" />
           <label className="signup-label">
-            I agree to the Terms of Service and Privacy Policy
           </label>
         </div>
 
@@ -72,7 +70,7 @@ const Login = () => {
           Login
         </button>
         <button className="btn-login"
-         onClick={()=>login("adarshbalika@gmail.com","adarshBalika123",navigate,location,encodedToken)}
+         onClick={()=>login("adarshpatel@gmail.com","adarsh@neog",navigate,location,encodedToken)}
         >Test Login</button>
 
         <span className="signup-span">

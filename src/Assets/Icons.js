@@ -7,9 +7,12 @@ export {
   MdPlaylistPlay,
   MdOutlineExplore,
   MdOutlineWatchLater,
+  MdWatchLater,
   MdPlaylistAdd,
+  MdPlaylistAddCheck,
   MdLogout,MdLogin,
   MdSearch,
+  MdArrowBack,
 } from "react-icons/md";
 
 export {

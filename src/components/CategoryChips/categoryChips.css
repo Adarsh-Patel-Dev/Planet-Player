@@ -1,0 +1,31 @@
+.category-chips-container {
+    display: flex;
+    overflow-x: auto;
+    border: transparent;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+.chips{
+    margin: 1rem;
+    padding: 0.8rem 1rem;
+    border: 1px solid #4e4d4db1;
+    color: black;
+    background-color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 5rem;
+    width: max-content;
+    transition: 0.5s;
+}
+
+
+.chips:hover,.active{
+    transform: scale(1.1);
+    transition: 0.5s;
+    cursor: pointer;
+    /* border: 1px solid #FBFBFB; */
+    background-color: #4e4d4db1;
+    color: white;
+
+}

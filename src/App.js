@@ -1,4 +1,5 @@
 import "./App.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -17,12 +18,17 @@ import { Signup } from "./pages/SignUpPage/Signup";
 import { Login } from "./pages/LoginPage/LoginPage";
 import { Auth } from "./components/Auth/Auth";
 import { Logout } from "./pages/LogoutPage/Logout";
+import { CategoryCard } from "./components/Card/CategoryCard/CategoryCard";
+import { ErrorPage } from "./pages/Error404Page/ErrorPage";
+import CategoryChips from "./components/CategoryChips/CategoryChips";
 
 function App() {
   return (
     <div className="App">
       <Navigation />
       <Routes>
+        <Route path="/card" element={<CategoryChips/>} />
+        <Route path="*" element={<ErrorPage/>} />
         <Route path="/mockman" element={<MockAPI />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/videolisting" element={<VideoListing />} />
